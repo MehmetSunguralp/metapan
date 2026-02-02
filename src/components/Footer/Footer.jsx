@@ -64,7 +64,7 @@ const Footer = () => {
 						<div className={styles.logo}>
 							<img src={logo} alt="TEDD Logo" />
 						</div>
-						<p className={styles.description}>EDD DUVAR PANELLERİ VE YAPI MALZEMELERİ SANAYİ TİCARET LİMİTED ŞİRKETİ.</p>
+						<p className={styles.description}>TEDD DUVAR PANELLERİ VE YAPI MALZEMELERİ SANAYİ TİCARET LİMİTED ŞİRKETİ.</p>
 					</motion.div>
 
 					<motion.div className={styles.footerRight} variants={itemVariants}>
