@@ -2,7 +2,8 @@ import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import FeaturesSection from "./components/FeaturesSection/FeaturesSection";
 import AboutSection from "./components/AboutSection/AboutSection";
-import ProjectsSection from "./components/ProjectsSection/ProjectsSection";
+import ProjectsPreviewSection from "./components/ProjectsPreviewSection/ProjectsPreviewSection";
+import TestimonialSection from "./components/TestimonialSection/TestimonialSection";
 import CallToAction from "./components/CallToAction/CallToAction";
 import Footer from "./components/Footer/Footer";
 
@@ -14,7 +15,8 @@ function App() {
 				<Hero />
 				<FeaturesSection />
 				<AboutSection />
-				<ProjectsSection />
+				<ProjectsPreviewSection />
+				<TestimonialSection />
 				<CallToAction />
 			</main>
 			<Footer />
