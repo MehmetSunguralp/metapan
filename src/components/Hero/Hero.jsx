@@ -1,10 +1,12 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
 import { heroImage } from "../../staticAssets";
 import styles from "./Hero.module.scss";
 
 const Hero = () => {
+	const navigate = useNavigate();
 	const [ref, inView] = useInView({
 		threshold: 0.1,
 		triggerOnce: true,
@@ -47,7 +49,7 @@ const Hero = () => {
 						İnşaat sektöründe yaşanan uluslararası gelişmeleri Türkiye'ye taşıyor, sektörün geleceğini bugünden kuruyoruz.
 					</motion.p>
 					<motion.div variants={textVariants}>
-						<Button variant="dark" size="large" onClick={() => (globalThis.location.href = "#projects")}>
+						<Button variant="dark" size="large" onClick={() => navigate("/projects")}>
 							Projelere Göz Atın <span className={styles.arrow}>▸</span>
 						</Button>
 					</motion.div>

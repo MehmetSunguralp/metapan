@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 import NavLink from "../NavLink/NavLink";
 import SocialIcons from "../SocialIcons/SocialIcons";
 import styles from "./Header.module.scss";
 import { logo } from "../../staticAssets";
 
 const Header = () => {
+	const location = useLocation();
 	const [isScrolled, setIsScrolled] = useState(false);
 
 	useEffect(() => {
@@ -18,12 +20,12 @@ const Header = () => {
 	}, []);
 
 	const navItems = [
-		{ label: "Anasayfa", href: "#home", active: true },
-		{ label: "Hakkında", href: "#about" },
-		{ label: "Projeler", href: "#projects" },
-		{ label: "Fiyat Listesi", href: "#pricing" },
-		{ label: "Sertifikalar", href: "#certificates" },
-		{ label: "İletişim", href: "#contact" },
+		{ label: "Anasayfa", href: "/" },
+		{ label: "Hakkında", href: "/about" },
+		{ label: "Projeler", href: "/projects" },
+		{ label: "Fiyat Listesi", href: "/pricing" },
+		{ label: "Sertifikalar", href: "/certificates" },
+		{ label: "İletişim", href: "/contact" },
 	];
 
 	return (
@@ -35,7 +37,9 @@ const Header = () => {
 		>
 			<div className={styles.container}>
 				<motion.div className={styles.logo} whileHover={{ scale: 1.05 }}>
-					<img src={logo} alt="Tedd - METAPAN" />
+					<Link to="/">
+						<img src={logo} alt="Tedd - METAPAN" />
+					</Link>
 				</motion.div>
 
 				<nav className={styles.nav}>
@@ -46,7 +50,7 @@ const Header = () => {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ delay: index * 0.1 }}
 						>
-							<NavLink href={item.href} isActive={item.active}>
+							<NavLink href={item.href} isActive={location.pathname === item.href}>
 								{item.label}
 							</NavLink>
 						</motion.div>

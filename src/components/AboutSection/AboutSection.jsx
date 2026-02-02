@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
 import VideoModal from "../VideoModal/VideoModal";
 import { panelCloseUp, installationVideo2, installationVideo2Thumb } from "../../staticAssets";
@@ -8,6 +9,7 @@ import styles from "./AboutSection.module.scss";
 import { FaPlay } from "react-icons/fa";
 
 const AboutSection = () => {
+	const navigate = useNavigate();
 	const [isVideoOpen, setIsVideoOpen] = useState(false);
 	const [ref, inView] = useInView({
 		threshold: 0.1,
@@ -83,7 +85,7 @@ const AboutSection = () => {
 						</motion.p>
 
 						<motion.div variants={textVariants}>
-							<Button variant="dark" size="large" onClick={() => (globalThis.location.href = "#about")}>
+							<Button variant="dark" size="large" onClick={() => navigate("/about")}>
 								Hakkımızda <span className={styles.arrow}>▸</span>
 							</Button>
 						</motion.div>

@@ -1,10 +1,12 @@
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 import { ctaBg } from '../../staticAssets';
 import styles from './CallToAction.module.scss';
 
 const CallToAction = () => {
+  const navigate = useNavigate();
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -33,7 +35,7 @@ const CallToAction = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          <Button variant="primary" size="large" onClick={() => (globalThis.location.href = '#contact')}>
+          <Button variant="primary" size="large" onClick={() => navigate('/contact')}>
             İletişime Geç
             <span className={styles.arrow}>▸</span>
           </Button>
