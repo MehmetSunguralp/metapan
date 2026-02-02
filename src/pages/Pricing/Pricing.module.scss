@@ -1,0 +1,201 @@
+@use "../../styles/variables" as *;
+
+.pricingPage {
+	padding: $spacing-xl 0;
+	background-color: $light-bg;
+	margin-top: $header-height;
+	min-height: calc(100vh - $header-height);
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 $spacing-md;
+}
+
+.title {
+	font-family: $font-family-heading;
+	font-size: $font-size-h1;
+	font-weight: 700;
+	color: $text-dark;
+	text-align: center;
+	margin-bottom: $spacing-xl;
+	line-height: 1.2;
+}
+
+.accordion {
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-md;
+}
+
+.accordionItem {
+	border: 1px solid rgba($text-dark, 0.1);
+	border-radius: 8px;
+	overflow: hidden;
+	background-color: $light-bg;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	transition: box-shadow $transition-base;
+
+	&:hover {
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.accordionHeader {
+	width: 100%;
+	padding: $spacing-md $spacing-lg;
+	background-color: $gray-bg;
+	color: $text-light;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family: $font-family-heading;
+	font-size: $font-size-h2;
+	font-weight: 700;
+	transition: background-color $transition-base;
+	text-align: left;
+
+	&:hover:not(:disabled) {
+		background-color: rgba($gray-bg, 0.9);
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+	&.active {
+		background-color: $primary-color;
+		color: $text-light;
+	}
+}
+
+.seriesName {
+	flex: 1;
+}
+
+.accordionIcon {
+	font-size: 1.5rem;
+	font-weight: 300;
+	width: 30px;
+	text-align: center;
+}
+
+.accordionContent {
+	overflow: hidden;
+}
+
+.tableWrapper {
+	overflow-x: auto;
+	background-color: $light-bg;
+}
+
+.pricingTable {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: $light-bg;
+
+	thead {
+		background-color: rgba($gray-bg, 0.1);
+
+		th {
+			font-family: $font-family-heading;
+			font-size: $font-size-base;
+			font-weight: 700;
+			padding: $spacing-md;
+			text-align: left;
+			border-bottom: 2px solid rgba($text-dark, 0.1);
+			color: $text-dark;
+
+			&:first-child {
+				width: 150px;
+			}
+		}
+	}
+
+	tbody {
+		tr {
+			border-bottom: 1px solid rgba($text-dark, 0.1);
+			transition: background-color $transition-base;
+
+			&:hover {
+				background-color: rgba($primary-color, 0.05);
+			}
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+
+		td {
+			padding: $spacing-md;
+			font-family: $font-family-body;
+			font-size: $font-size-base;
+			color: $text-dark;
+			vertical-align: middle;
+		}
+	}
+}
+
+.imageCell {
+	width: 150px;
+
+	img {
+		width: 120px;
+		height: 80px;
+		object-fit: contain;
+		border-radius: 4px;
+	}
+}
+
+.modelCell,
+.thicknessCell,
+.weightCell,
+.areaCell {
+	font-family: $font-family-body;
+	font-size: $font-size-base;
+	font-weight: 400;
+	color: $text-dark;
+}
+
+.priceCell {
+	font-family: $font-family-heading;
+	font-size: $font-size-h3;
+	font-weight: 700;
+	color: $primary-color;
+}
+
+@media (max-width: $breakpoint-md) {
+	.accordionHeader {
+		padding: $spacing-sm $spacing-md;
+		font-size: $font-size-h3;
+	}
+
+	.pricingTable {
+		thead {
+			th {
+				font-size: 0.875rem;
+				padding: $spacing-sm;
+			}
+		}
+
+		tbody {
+			td {
+				padding: $spacing-sm;
+				font-size: 0.875rem;
+			}
+		}
+	}
+
+	.imageCell {
+		width: 100px;
+
+		img {
+			width: 80px;
+			height: 60px;
+		}
+	}
+}

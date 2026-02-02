@@ -19,3 +19,20 @@ export const project6 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/proje
 export const concreteBg = "http://www.tedd.com.tr/wp-content/uploads/2026/02/betonarme.webp"
 
 export const ctaBg = "http://www.tedd.com.tr/wp-content/uploads/2022/06/faq-video.jpg"
+
+export const panelThumb5 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/5.webp"
+export const panelThumb6 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/6.webp"
+export const panelThumb7 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/7.webp"
+export const panelThumb8 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/8.webp"
+export const panelThumb10 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/10.webp"
+export const panelThumb12 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/12.webp"
+export const panelThumb15 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/15.webp"
+export const panelThumb18 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/18.webp"
+
+export const panelThumb10z = "http://www.tedd.com.tr/wp-content/uploads/2026/02/10z.webp"
+export const panelThumb15z = "http://www.tedd.com.tr/wp-content/uploads/2026/02/15z.webp"
+export const panelThumb18z = "http://www.tedd.com.tr/wp-content/uploads/2026/02/18z.webp"
+
+export const panelThumb10z18 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/10z18.webp"
+export const panelThumb15z18 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/15z.webp"
+export const panelThumb18z18 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/18z18.webp"
