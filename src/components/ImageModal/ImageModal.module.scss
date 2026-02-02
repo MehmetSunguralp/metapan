@@ -1,0 +1,83 @@
+@use "../../styles/variables" as *;
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.9);
+	z-index: $z-overlay;
+	backdrop-filter: blur(5px);
+}
+
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: auto;
+	max-width: 90vw;
+	max-height: 90vh;
+	z-index: calc($z-overlay + 1);
+	border-radius: 8px;
+	overflow: visible;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+
+	@media (max-width: $breakpoint-md) {
+		max-width: 95vw;
+		max-height: 95vh;
+	}
+}
+
+.closeButton {
+	position: absolute;
+	top: $spacing-sm;
+	right: $spacing-sm;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.7);
+	border: none;
+	border-radius: 50%;
+	color: $text-light;
+	font-size: 1.5rem;
+	cursor: pointer;
+	z-index: 10;
+	transition: all $transition-fast;
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.9);
+		transform: scale(1.1);
+	}
+}
+
+.imageWrapper {
+	position: relative;
+	width: auto;
+	height: auto;
+	max-height: 90vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+
+	img {
+		max-width: 90vw;
+		max-height: 90vh;
+		width: auto;
+		height: auto;
+		object-fit: contain;
+		border-radius: 4px;
+		display: block;
+
+		@media (max-width: $breakpoint-md) {
+			max-width: 95vw;
+			max-height: 95vh;
+		}
+	}
+}

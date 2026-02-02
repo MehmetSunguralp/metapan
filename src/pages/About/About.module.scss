@@ -1,0 +1,123 @@
+@use "../../styles/variables" as *;
+
+.aboutPage {
+	padding: $spacing-xl 0;
+	background-color: $light-bg;
+	margin-top: $header-height;
+	min-height: calc(100vh - $header-height);
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 $spacing-md;
+}
+
+.content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: $spacing-xl;
+	margin-bottom: $spacing-xl;
+	align-items: flex-start;
+
+	@media (max-width: $breakpoint-lg) {
+		grid-template-columns: 1fr;
+		gap: $spacing-lg;
+	}
+}
+
+.leftColumn {
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-md;
+}
+
+.title {
+	font-family: $font-family-heading;
+	font-size: $font-size-h1;
+	font-weight: 700;
+	color: $text-dark;
+	line-height: 1.2;
+	margin: 0;
+}
+
+.description {
+	font-family: $font-family-body;
+	font-size: $font-size-base;
+	font-weight: 400;
+	color: rgba($text-dark, 0.8);
+	line-height: 1.7;
+	text-align: justify;
+	margin: 0;
+}
+
+.rightColumn {
+	width: 100%;
+}
+
+.imageWrapper {
+	width: 100%;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+		object-fit: cover;
+	}
+}
+
+.bottomSection {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: $spacing-xl;
+	align-items: flex-start;
+
+	@media (max-width: $breakpoint-lg) {
+		grid-template-columns: 1fr;
+		gap: $spacing-lg;
+	}
+}
+
+.bottomLeftImage {
+	width: 100%;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+		object-fit: cover;
+	}
+}
+
+.bottomRightText {
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-md;
+}
+
+.visionTitle,
+.missionTitle {
+	font-family: $font-family-heading;
+	font-size: $font-size-h2;
+	font-weight: 700;
+	color: $text-dark;
+	line-height: 1.2;
+	margin: 0;
+}
+
+.visionText,
+.missionText {
+	font-family: $font-family-body;
+	font-size: $font-size-base;
+	font-weight: 400;
+	color: rgba($text-dark, 0.8);
+	line-height: 1.7;
+	text-align: justify;
+	margin: 0;
+}
