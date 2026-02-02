@@ -17,3 +17,5 @@ export const project5 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/proje
 export const project6 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/project6.webp"
 
 export const concreteBg = "http://www.tedd.com.tr/wp-content/uploads/2026/02/betonarme.webp"
+
+export const ctaBg = "http://www.tedd.com.tr/wp-content/uploads/2022/06/faq-video.jpg"

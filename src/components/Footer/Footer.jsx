@@ -1,6 +1,7 @@
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import SocialIcons from '../SocialIcons/SocialIcons';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { logo } from '../../staticAssets';
 import styles from './Footer.module.scss';
 
 const Footer = () => {
@@ -9,17 +10,22 @@ const Footer = () => {
     triggerOnce: true,
   });
 
+  const currentYear = new Date().getFullYear();
+
   const contactInfo = [
     {
-      icon: '📍',
-      text: '975. YIL OSB MAH. 20 CAD. NO: 8 ODUNPAZARI/ ESKİŞEHİR',
+      id: 'address',
+      icon: FaMapMarkerAlt,
+      text: '75. YIL OSB MAH. 20 CAD. NO: 8 ODUNPAZARI/ ESKİŞEHİR',
     },
     {
-      icon: '📞',
+      id: 'phone',
+      icon: FaPhone,
       text: '+90 222 711 2611',
     },
     {
-      icon: '✉️',
+      id: 'email',
+      icon: FaEnvelope,
       text: 'metapanduvarpanelleri@gmail.com',
     },
   ];
@@ -47,7 +53,7 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer} ref={ref}>
-      <div className={styles.container}>
+      <div className={styles.footerContentWrapper}>
         <motion.div
           className={styles.footerContent}
           variants={containerVariants}
@@ -56,8 +62,7 @@ const Footer = () => {
         >
           <motion.div className={styles.footerLeft} variants={itemVariants}>
             <div className={styles.logo}>
-              <span className={styles.logoIcon}>T</span>
-              <span className={styles.logoText}>Tedd</span>
+              <img src={logo} alt="TEDD Logo" />
             </div>
             <p className={styles.description}>
               Vehicula at eget a arcu neque, ultricies liquet tempus.
@@ -65,19 +70,26 @@ const Footer = () => {
           </motion.div>
 
           <motion.div className={styles.footerRight} variants={itemVariants}>
-            {contactInfo.map((info, index) => (
-              <motion.div
-                key={index}
-                className={styles.contactItem}
-                variants={itemVariants}
-              >
-                <span className={styles.icon}>{info.icon}</span>
-                <span className={styles.text}>{info.text}</span>
-              </motion.div>
-            ))}
+            {contactInfo.map((info) => {
+              const IconComponent = info.icon;
+              return (
+                <motion.div
+                  key={info.id}
+                  className={styles.contactItem}
+                  variants={itemVariants}
+                >
+                  <span className={styles.icon}>
+                    <IconComponent />
+                  </span>
+                  <span className={styles.text}>{info.text}</span>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </motion.div>
+      </div>
 
+      <div className={styles.footerBottomWrapper}>
         <motion.div
           className={styles.footerBottom}
           initial={{ opacity: 0 }}
@@ -85,9 +97,8 @@ const Footer = () => {
           transition={{ delay: 0.5 }}
         >
           <p className={styles.copyright}>
-            © 2026 tedd.com.tr Tüm hakları saklıdır.
+            © {currentYear} tedd.com.tr Tüm hakları saklıdır.
           </p>
-          <SocialIcons className={styles.socialIcons} />
         </motion.div>
       </div>
     </footer>
