@@ -1,0 +1,30 @@
+@use '../../styles/variables' as *;
+
+.navLink {
+  position: relative;
+  padding: $spacing-xs $spacing-sm;
+  color: $text-dark;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $primary-color;
+  }
+
+  &.active {
+    color: $primary-color;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: $spacing-sm;
+      right: $spacing-sm;
+      height: 2px;
+      background-color: $primary-color;
+    }
+  }
+}
