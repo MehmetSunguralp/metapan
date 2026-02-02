@@ -1,4 +1,5 @@
 @use "../../styles/variables" as *;
+@use "sass:color";
 
 .pricingPage {
 	padding: $spacing-xl 0;
@@ -19,14 +20,34 @@
 	font-weight: 700;
 	color: $text-dark;
 	text-align: center;
-	margin-bottom: $spacing-xl;
+	margin-bottom: $spacing-lg;
 	line-height: 1.2;
+}
+
+.downloadSection {
+	display: flex;
+	justify-content: center;
+	margin-bottom: $spacing-xl;
+}
+
+.downloadLink {
+	display: inline-block;
+	color: $primary-color;
+	text-decoration: none;
+	font-family: $font-family-heading;
+	font-size: $font-size-base;
+	font-weight: 600;
+	transition: opacity $transition-base;
+
+	&:hover {
+		opacity: 0.8;
+	}
 }
 
 .accordion {
 	display: flex;
 	flex-direction: column;
-	gap: $spacing-md;
+	gap: $spacing-sm;
 }
 
 .accordionItem {
@@ -105,7 +126,7 @@
 			font-family: $font-family-heading;
 			font-size: $font-size-base;
 			font-weight: 700;
-			padding: $spacing-md;
+			padding: $spacing-sm $spacing-md;
 			text-align: left;
 			border-bottom: 2px solid rgba($text-dark, 0.1);
 			color: $text-dark;
@@ -131,7 +152,7 @@
 		}
 
 		td {
-			padding: $spacing-md;
+			padding: $spacing-sm $spacing-md;
 			font-family: $font-family-body;
 			font-size: $font-size-base;
 			color: $text-dark;
@@ -166,6 +187,30 @@
 	font-size: $font-size-h3;
 	font-weight: 700;
 	color: $primary-color;
+}
+
+.footerNotes {
+	padding: $spacing-md $spacing-lg;
+	background-color: rgba($gray-bg, 0.05);
+	border-top: 1px solid rgba($text-dark, 0.1);
+	margin-top: $spacing-md;
+
+	p {
+		font-family: $font-family-body;
+		font-size: 0.875rem;
+		color: rgba($text-dark, 0.7);
+		margin: $spacing-xs 0;
+		text-align: center;
+		line-height: 1.5;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 
 @media (max-width: $breakpoint-md) {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -16,11 +16,13 @@ import {
 	panelThumb10z18,
 	panelThumb15z18,
 	panelThumb18z18,
+	priceList2026,
 } from "../../staticAssets";
 import styles from "./Pricing.module.scss";
 
 const Pricing = () => {
 	const [activeSeries, setActiveSeries] = useState("126");
+	const headerRefs = useRef({});
 	const [ref, inView] = useInView({
 		threshold: 0.1,
 		triggerOnce: true,
@@ -209,7 +211,7 @@ const Pricing = () => {
 	const series132 = [
 		{
 			id: 1,
-			image: panelThumb10z18,
+			image: panelThumb10z,
 			model: "T100-132",
 			thickness: "100 x 32 x 10",
 			weight: "10,0",
@@ -218,7 +220,7 @@ const Pricing = () => {
 		},
 		{
 			id: 2,
-			image: panelThumb15z18,
+			image: panelThumb15z,
 			model: "T150-132",
 			thickness: "100 x 32 x 15",
 			weight: "15,0",
@@ -227,7 +229,7 @@ const Pricing = () => {
 		},
 		{
 			id: 3,
-			image: panelThumb18z18,
+			image: panelThumb18z,
 			model: "T180-132",
 			thickness: "100 x 32 x 18",
 			weight: "18,0",
@@ -244,7 +246,8 @@ const Pricing = () => {
 	];
 
 	const handleSeriesToggle = (seriesId) => {
-		setActiveSeries(activeSeries === seriesId ? null : seriesId);
+		const wasOpen = activeSeries === seriesId;
+		setActiveSeries(wasOpen ? null : seriesId);
 	};
 
 	return (
@@ -259,6 +262,17 @@ const Pricing = () => {
 					Fiyat Listesi
 				</motion.h1>
 
+				<motion.div
+					className={styles.downloadSection}
+					initial={{ opacity: 0, y: 20 }}
+					animate={inView ? { opacity: 1, y: 0 } : {}}
+					transition={{ duration: 0.6, delay: 0.2 }}
+				>
+					<a href={priceList2026} target="_blank" rel="noopener noreferrer" className={styles.downloadLink}>
+						METAPAN 2026 Fiyat Listesi İndir
+					</a>
+				</motion.div>
+
 				<div className={styles.accordion}>
 					{series.map((seriesItem, index) => (
 						<motion.div
@@ -269,6 +283,7 @@ const Pricing = () => {
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 						>
 							<button
+								ref={(el) => (headerRefs.current[seriesItem.id] = el)}
 								className={`${styles.accordionHeader} ${activeSeries === seriesItem.id ? styles.active : ""}`}
 								onClick={() => handleSeriesToggle(seriesItem.id)}
 								disabled={seriesItem.data.length === 0}
@@ -318,6 +333,10 @@ const Pricing = () => {
 													))}
 												</tbody>
 											</table>
+										</div>
+										<div className={styles.footerNotes}>
+											<p>Liste fiyatlarına KDV dahil değildir</p>
+											<p>Ürünler Eskişehir teslimi olup nakliye alıcıya aittir</p>
 										</div>
 									</motion.div>
 								)}
