@@ -36,6 +36,12 @@
   font-weight: 700;
   color: $text-dark;
   cursor: pointer;
+
+  img {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+  }
 }
 
 .logoIcon {

@@ -1,3 +1,7 @@
 export const installationVideo1 = "http://www.tedd.com.tr/wp-content/uploads/2025/01/Metapan-Duvar-Insasi-Ic-Mekan.mp4"
+export const installationVideo1Thumb = "http://www.tedd.com.tr/wp-content/uploads/2026/02/video1thumb.webp"
 export const installationVideo2 = "http://www.tedd.com.tr/wp-content/uploads/2025/01/Metapan-Duvar-Insasi-Dis-2.mp4"
+export const installationVideo2Thumb = "http://www.tedd.com.tr/wp-content/uploads/2026/02/video2thumb.webp"
 export const heroImage = "http://www.tedd.com.tr/wp-content/uploads/2026/02/hero.webp"
+export const logo = "http://www.tedd.com.tr/wp-content/uploads/2026/02/TEDD-LOGO-yazili-1-scaled.webp"
+export const panelCloseUp = "http://www.tedd.com.tr/wp-content/uploads/2026/02/panel_detay.webp"
