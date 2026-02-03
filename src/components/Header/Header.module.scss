@@ -177,50 +177,79 @@
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
-  width: calc(100% - 80px);
-  max-width: 400px;
+  width: 100%;
+  height: 70vh;
+  max-height: 70vh;
   background-color: $light-bg;
   z-index: $z-overlay;
-  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: $spacing-xl $spacing-md;
-  padding-top: calc($header-height + $spacing-lg);
+  justify-content: space-between;
+  padding: 30px $spacing-sm;
+  padding-top: 50px;
+  padding-bottom: $spacing-sm;
+  overflow: hidden;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  @media (max-width: 576px) {
+    padding: 25px $spacing-xs;
+    padding-top: 45px;
+    padding-bottom: $spacing-xs;
+  }
 
   @media (max-width: 320px) {
-    width: calc(100% - 60px);
-    padding: $spacing-lg $spacing-sm;
-    padding-top: calc($header-height + $spacing-md);
+    padding: 20px $spacing-xs;
+    padding-top: 40px;
+    padding-bottom: $spacing-xs;
   }
 }
 
 .mobileNav {
   display: flex;
   flex-direction: column;
-  gap: $spacing-md;
-  flex: 1;
+  gap: 1.2rem;
   width: 100%;
   align-items: center;
   justify-content: center;
+  flex: 1;
+
+  @media (max-width: 576px) {
+    gap: 0.95rem;
+  }
+
+  @media (max-width: 400px) {
+    gap: 0.85rem;
+  }
 
   @media (max-width: 320px) {
-    gap: $spacing-sm;
+    gap: 0.75rem;
   }
 
   a {
-    font-size: 1.25rem;
-    padding: $spacing-sm 0;
+    font-size: 1.3rem;
+    padding: 0.25rem 0;
     font-weight: 500;
     display: block;
     width: 100%;
     text-align: center;
+    line-height: 1.3;
+
+    @media (max-width: 576px) {
+      font-size: 1.2rem;
+      padding: 0.2rem 0;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 1.15rem;
+      padding: 0.2rem 0;
+    }
 
     @media (max-width: 320px) {
       font-size: 1.1rem;
-      padding: $spacing-xs 0;
+      padding: 0.15rem 0;
     }
 
     &.active {
@@ -234,16 +263,19 @@
 }
 
 .mobileSocialIcons {
-  margin-top: $spacing-lg;
-  padding-top: $spacing-lg;
+  padding-top: $spacing-sm;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
+
+  @media (max-width: 576px) {
+    padding-top: $spacing-xs;
+  }
 
   @media (max-width: 320px) {
-    margin-top: $spacing-md;
-    padding-top: $spacing-md;
+    padding-top: 0.4rem;
   }
 }

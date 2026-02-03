@@ -15,6 +15,21 @@
 	text-transform: capitalize;
 	letter-spacing: 0.5px;
 
+	@media (max-width: 576px) {
+		padding: 0.65rem 1.75rem;
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 400px) {
+		padding: 0.6rem 1.5rem;
+		font-size: 0.85rem;
+	}
+
+	@media (max-width: 320px) {
+		padding: 0.5rem 1.25rem;
+		font-size: 0.8rem;
+	}
+
 	&:focus {
 		outline: 2px solid $primary-color;
 		outline-offset: 2px;
@@ -48,14 +63,59 @@
 .small {
 	padding: 0.5rem 1.5rem;
 	font-size: 0.875rem;
+
+	@media (max-width: 576px) {
+		padding: 0.45rem 1.25rem;
+		font-size: 0.8rem;
+	}
+
+	@media (max-width: 320px) {
+		padding: 0.4rem 1rem;
+		font-size: 0.75rem;
+	}
 }
 
 .medium {
 	padding: 0.75rem 2rem;
 	font-size: $font-size-base;
+
+	@media (max-width: 576px) {
+		padding: 0.65rem 1.75rem;
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 320px) {
+		padding: 0.55rem 1.5rem;
+		font-size: 0.85rem;
+	}
 }
 
 .large {
 	padding: 1rem 2.5rem;
 	font-size: 1.125rem;
+
+	@media (max-width: 900px) {
+		padding: 0.9rem 2.25rem;
+		font-size: 1.05rem;
+	}
+
+	@media (max-width: $breakpoint-md) {
+		padding: 0.85rem 2rem;
+		font-size: 1rem;
+	}
+
+	@media (max-width: 576px) {
+		padding: 0.75rem 1.75rem;
+		font-size: 0.95rem;
+	}
+
+	@media (max-width: 400px) {
+		padding: 0.7rem 1.5rem;
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 320px) {
+		padding: 0.6rem 1.25rem;
+		font-size: 0.85rem;
+	}
 }

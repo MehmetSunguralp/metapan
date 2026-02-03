@@ -130,17 +130,17 @@ const Header = () => {
 						/>
 						<motion.div
 							className={styles.mobileMenu}
-							initial={{ x: "-100%" }}
-							animate={{ x: 0 }}
-							exit={{ x: "-100%" }}
+							initial={{ y: "-100%" }}
+							animate={{ y: 0 }}
+							exit={{ y: "-100%" }}
 							transition={{ type: "spring", damping: 25, stiffness: 200 }}
 						>
 							<nav className={styles.mobileNav}>
 								{navItems.map((item, index) => (
 									<motion.div
 										key={item.label}
-										initial={{ opacity: 0, x: -50 }}
-										animate={{ opacity: 1, x: 0 }}
+										initial={{ opacity: 0, y: -20 }}
+										animate={{ opacity: 1, y: 0 }}
 										transition={{ delay: index * 0.1, duration: 0.3 }}
 									>
 										<NavLink
