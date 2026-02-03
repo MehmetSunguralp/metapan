@@ -8,6 +8,30 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	@media (max-width: 1100px) {
+		padding: $spacing-lg 0;
+		min-height: 350px;
+	}
+
+	@media (max-width: $breakpoint-md) {
+		padding: $spacing-md 0;
+		min-height: 300px;
+	}
+
+	@media (max-width: 576px) {
+		padding: $spacing-sm 0;
+		min-height: 250px;
+	}
+
+	@media (max-width: 400px) {
+		min-height: 200px;
+	}
+
+	@media (max-width: 320px) {
+		padding: $spacing-xs 0;
+		min-height: 180px;
+	}
 }
 
 .backgroundImage {
@@ -39,6 +63,18 @@
 	padding: 0 $spacing-md;
 	z-index: 3;
 	width: 100%;
+
+	@media (max-width: 1100px) {
+		padding: 0 $spacing-sm;
+	}
+
+	@media (max-width: 576px) {
+		padding: 0 $spacing-xs;
+	}
+
+	@media (max-width: 320px) {
+		padding: 0 0.5rem;
+	}
 }
 
 .content {
@@ -59,8 +95,28 @@
 	opacity: 0.9;
 	align-self: flex-start;
 
+	@media (max-width: 1100px) {
+		font-size: 6.5rem;
+	}
+
+	@media (max-width: 900px) {
+		font-size: 5.5rem;
+	}
+
 	@media (max-width: $breakpoint-md) {
 		font-size: 5rem;
+	}
+
+	@media (max-width: 576px) {
+		font-size: 4rem;
+	}
+
+	@media (max-width: 400px) {
+		font-size: 3.5rem;
+	}
+
+	@media (max-width: 320px) {
+		font-size: 3rem;
 	}
 }
 
@@ -76,8 +132,33 @@
 	z-index: 2;
 	text-align: justify;
 
+	@media (max-width: 1100px) {
+		font-size: 1.75rem;
+		line-height: 1.7;
+	}
+
+	@media (max-width: 900px) {
+		font-size: 1.6rem;
+		line-height: 1.6;
+	}
+
 	@media (max-width: $breakpoint-md) {
 		font-size: 1.5rem;
 		line-height: 1.6;
+	}
+
+	@media (max-width: 576px) {
+		font-size: 1.25rem;
+		line-height: 1.5;
+	}
+
+	@media (max-width: 400px) {
+		font-size: 1.1rem;
+		line-height: 1.4;
+	}
+
+	@media (max-width: 320px) {
+		font-size: 1rem;
+		line-height: 1.4;
 	}
 }
