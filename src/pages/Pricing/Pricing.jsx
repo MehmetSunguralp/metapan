@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaDownload } from "react-icons/fa";
 import {
 	panelThumb5,
 	panelThumb6,
@@ -324,9 +325,10 @@ const Pricing = () => {
 					animate={inView ? { opacity: 1, y: 0 } : {}}
 					transition={{ duration: 0.6, delay: 0.2 }}
 				>
-					<a href={priceList2026} target="_blank" rel="noopener noreferrer" className={styles.downloadLink}>
-						METAPAN 2026 Fiyat Listesi İndir
-					</a>
+				<a href={priceList2026} target="_blank" rel="noopener noreferrer" className={styles.downloadLink}>
+					<FaDownload className={styles.downloadIcon} />
+					METAPAN 2026 Fiyat Listesi İndir
+				</a>
 				</motion.div>
 
 				<div className={styles.accordion}>

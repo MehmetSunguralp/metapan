@@ -150,18 +150,19 @@
 	}
 
 	@media (max-width: 576px) {
-		flex: 0 0 calc(50% - $spacing-sm / 2);
-		max-height: 200px;
+		flex: 0 0 100%;
+		width: 100%;
+		max-height: none;
+		aspect-ratio: 16 / 9;
 		order: 1;
 	}
 
 	@media (max-width: 400px) {
-		flex: 0 0 calc(50% - $spacing-xs / 2);
-		max-height: 180px;
+		aspect-ratio: 16 / 9;
 	}
 
 	@media (max-width: 320px) {
-		max-height: 150px;
+		aspect-ratio: 16 / 9;
 	}
 
 	img {
@@ -205,7 +206,7 @@
 	border-radius: 8px;
 	overflow: visible;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-	background-color: $text-dark;
+	background-color: transparent;
 	cursor: pointer;
 	transition: transform $transition-base;
 	padding: 0;

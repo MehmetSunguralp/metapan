@@ -2,22 +2,27 @@
 
 .projectsPreviewSection {
 	padding: $spacing-xl 0;
+	padding-top: calc($spacing-xl + $spacing-lg);
 	background-color: $light-bg;
 
 	@media (max-width: 1100px) {
 		padding: $spacing-lg 0;
+		padding-top: calc($spacing-lg + $spacing-md);
 	}
 
 	@media (max-width: $breakpoint-md) {
 		padding: $spacing-md 0;
+		padding-top: calc($spacing-md + $spacing-sm);
 	}
 
 	@media (max-width: 576px) {
 		padding: $spacing-sm 0;
+		padding-top: calc($spacing-sm + 3rem);
 	}
 
 	@media (max-width: 320px) {
 		padding: $spacing-xs 0;
+		padding-top: calc($spacing-xs + 3rem);
 	}
 }
 

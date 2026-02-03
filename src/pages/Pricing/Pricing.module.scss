@@ -31,17 +31,23 @@
 }
 
 .downloadLink {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	gap: $spacing-xs;
 	color: $primary-color;
-	text-decoration: none;
 	font-family: $font-family-heading;
 	font-size: $font-size-base;
 	font-weight: 600;
 	transition: opacity $transition-base;
+	text-decoration: underline;
 
 	&:hover {
 		opacity: 0.8;
 	}
+}
+
+.downloadIcon {
+	font-size: 1.1rem;
 }
 
 .accordion {
@@ -110,34 +116,42 @@
 }
 
 .tableWrapper {
-	overflow-x: auto;
+	width: 100%;
 	background-color: $light-bg;
+	overflow-x: visible;
 }
 
 .pricingTable {
 	width: 100%;
 	border-collapse: collapse;
 	background-color: $light-bg;
+	table-layout: auto;
 
 	thead {
 		background-color: rgba($gray-bg, 0.1);
-
 		th {
 			font-family: $font-family-heading;
-			font-size: $font-size-base;
+			font-size: 0.875rem;
 			font-weight: 700;
-			padding: $spacing-sm $spacing-md;
-			text-align: left;
+			padding: $spacing-sm $spacing-xs;
 			border-bottom: 2px solid rgba($text-dark, 0.1);
 			color: $text-dark;
-
+			white-space: nowrap;
+			
 			&:first-child {
-				width: 150px;
+				width: auto;
+				min-width: 70px;
+			}
+			* {
+				text-align: center;
 			}
 		}
 	}
 
 	tbody {
+		* {
+			text-align: center;
+		}
 		tr {
 			border-bottom: 1px solid rgba($text-dark, 0.1);
 			transition: background-color $transition-base;
@@ -152,9 +166,9 @@
 		}
 
 		td {
-			padding: $spacing-sm $spacing-md;
+			padding: $spacing-sm $spacing-xs;
 			font-family: $font-family-body;
-			font-size: $font-size-base;
+			font-size: 0.875rem;
 			color: $text-dark;
 			vertical-align: middle;
 		}
@@ -162,13 +176,16 @@
 }
 
 .imageCell {
-	width: 150px;
+	width: auto;
+	min-width: 70px;
+	padding: $spacing-xs;
 
 	img {
-		width: 120px;
-		height: 80px;
+		width: 60px;
+		height: 40px;
 		object-fit: contain;
 		border-radius: 4px;
+		display: block;
 	}
 }
 
@@ -177,14 +194,14 @@
 .weightCell,
 .areaCell {
 	font-family: $font-family-body;
-	font-size: $font-size-base;
+	font-size: 0.875rem;
 	font-weight: 400;
 	color: $text-dark;
 }
 
 .priceCell {
 	font-family: $font-family-heading;
-	font-size: $font-size-h3;
+	font-size: 1rem;
 	font-weight: 700;
 	color: $primary-color;
 }
@@ -213,7 +230,53 @@
 	}
 }
 
+@media (max-width: 1100px) {
+	.pricingTable {
+		thead {
+			th {
+				font-size: 0.8rem;
+				padding: $spacing-xs 0.5rem;
+			}
+		}
+
+		tbody {
+			td {
+				padding: $spacing-xs 0.5rem;
+				font-size: 0.8rem;
+			}
+		}
+	}
+
+	.imageCell {
+		width: auto;
+		min-width: 60px;
+		padding: $spacing-xs 0.3rem;
+
+		img {
+			width: 50px;
+			height: 35px;
+		}
+	}
+
+	.priceCell {
+		font-size: 0.9rem;
+	}
+}
+
 @media (max-width: $breakpoint-md) {
+	.pricingPage {
+		padding: $spacing-md 0;
+	}
+
+	.container {
+		padding: 0 $spacing-sm;
+	}
+
+	.title {
+		font-size: 1.75rem;
+		margin-bottom: $spacing-sm;
+	}
+
 	.accordionHeader {
 		padding: $spacing-sm $spacing-md;
 		font-size: $font-size-h3;
@@ -222,25 +285,113 @@
 	.pricingTable {
 		thead {
 			th {
-				font-size: 0.875rem;
-				padding: $spacing-sm;
+				font-size: 0.75rem;
+				padding: $spacing-xs 0.4rem;
 			}
 		}
 
 		tbody {
 			td {
-				padding: $spacing-sm;
-				font-size: 0.875rem;
+				padding: $spacing-xs 0.4rem;
+				font-size: 0.75rem;
 			}
 		}
 	}
 
 	.imageCell {
-		width: 100px;
+		width: auto;
+		min-width: 55px;
+		padding: $spacing-xs 0.25rem;
 
 		img {
-			width: 80px;
-			height: 60px;
+			width: 45px;
+			height: 30px;
 		}
+	}
+
+	.priceCell {
+		font-size: 0.85rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.title {
+		font-size: 1.5rem;
+	}
+
+	.accordionHeader {
+		padding: $spacing-xs $spacing-sm;
+		font-size: 1.25rem;
+	}
+
+	.pricingTable {
+		thead {
+			th {
+				font-size: 0.7rem;
+				padding: 0.3rem 0.3rem;
+			}
+		}
+
+		tbody {
+			td {
+				padding: 0.3rem 0.3rem;
+				font-size: 0.7rem;
+			}
+		}
+	}
+
+	.imageCell {
+		width: auto;
+		min-width: 50px;
+		padding: 0.3rem 0.2rem;
+
+		img {
+			width: 40px;
+			height: 28px;
+		}
+	}
+
+	.priceCell {
+		font-size: 0.8rem;
+	}
+
+	.footerNotes {
+		padding: $spacing-sm;
+		font-size: 0.75rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.pricingTable {
+		thead {
+			th {
+				font-size: 0.65rem;
+				padding: 0.25rem 0.25rem;
+				&:first-child {
+					min-width: unset;
+				}
+			}
+		}
+
+		tbody {
+			td {
+				padding: 0.5rem 0;
+				font-size: 0.65rem;
+			}
+		}
+	}
+
+	.imageCell {
+		max-width: 30px;
+
+
+		img {
+			width: 35px;
+			height: 24px;
+		}
+	}
+
+	.priceCell {
+		font-size: 0.75rem;
 	}
 }
