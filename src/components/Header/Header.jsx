@@ -24,7 +24,7 @@ const Header = () => {
 		{ label: "Hakkında", href: "/about" },
 		{ label: "Projeler", href: "/projects" },
 		{ label: "Fiyat Listesi", href: "/pricing" },
-		{ label: "Sertifikalar", href: "/certificates" },
+		{ label: "Belgeler", href: "/certificates" },
 		{ label: "İletişim", href: "/contact" },
 	];
 

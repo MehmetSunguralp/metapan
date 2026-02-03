@@ -38,3 +38,9 @@ export const panelThumb15z18 = "http://www.tedd.com.tr/wp-content/uploads/2026/0
 export const panelThumb18z18 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/18z18.webp"
 
 export const priceList2026 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/METAPAN-2026-FIYAT.pdf"
+
+export const t50245report = "https://www.tedd.com.tr/wp-content/uploads/2025/02/METAPAN-T50-245-Rapor.pdf"
+export const t50245reportThumb = "http://www.tedd.com.tr/wp-content/uploads/2026/02/t50-245thumb.webp"
+
+export const t50330report = "https://www.tedd.com.tr/wp-content/uploads/2025/02/METAPAN-T50-330-Rapor.pdf"
+export const t50330reportThumb = "http://www.tedd.com.tr/wp-content/uploads/2026/02/t50-330thumb.webp"

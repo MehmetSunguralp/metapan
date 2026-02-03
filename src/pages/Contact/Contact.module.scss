@@ -1,0 +1,169 @@
+@use "../../styles/variables" as *;
+
+.contactPage {
+	padding: $spacing-lg 0;
+	background-color: $light-bg;
+	margin-top: $header-height;
+	min-height: calc(100vh - $header-height);
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 $spacing-md;
+	width: 100%;
+}
+
+.title {
+	font-family: $font-family-heading;
+	font-size: $font-size-h1;
+	font-weight: 700;
+	color: $text-dark;
+	text-align: center;
+	margin-bottom: $spacing-sm;
+	line-height: 1.2;
+}
+
+.subtitle {
+	font-family: $font-family-body;
+	font-size: 1.1rem;
+	font-weight: 400;
+	color: rgba($text-dark, 0.7);
+	text-align: center;
+	margin-bottom: $spacing-lg;
+	line-height: 1.6;
+}
+
+.contactCard {
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	background-color: $light-bg;
+	border: 1px solid rgba($text-dark, 0.05);
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.contactContent {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+.contactItem {
+	border-bottom: 1px solid rgba($text-dark, 0.1);
+	
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+.contactLink,
+.contactItemContent {
+	display: flex;
+	align-items: center;
+	gap: $spacing-md;
+	padding: $spacing-lg $spacing-md;
+	text-decoration: none;
+	color: inherit;
+	transition: background-color $transition-base;
+
+	&:hover {
+		background-color: rgba($primary-color, 0.05);
+	}
+}
+
+.contactLink {
+	&:hover {
+		color: $primary-color;
+	}
+}
+
+.iconWrapper {
+	width: 60px;
+	height: 60px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba($primary-color, 0.1);
+	border-radius: 50%;
+	transition: background-color $transition-base;
+}
+
+.contactLink:hover .iconWrapper,
+.contactItemContent:hover .iconWrapper {
+	background-color: rgba($primary-color, 0.2);
+}
+
+.icon {
+	font-size: 1.5rem;
+	color: $primary-color;
+}
+
+.textWrapper {
+	flex: 1;
+	text-align: left;
+}
+
+.contactTitle {
+	font-family: $font-family-heading;
+	font-size: $font-size-h3;
+	font-weight: 700;
+	color: $text-dark;
+	margin-bottom: $spacing-xs;
+	line-height: 1.3;
+}
+
+.contactText {
+	font-family: $font-family-body;
+	font-size: 1rem;
+	font-weight: 400;
+	color: rgba($text-dark, 0.8);
+	line-height: 1.6;
+	margin: 0;
+	word-break: break-word;
+}
+
+@media (max-width: $breakpoint-md) {
+	.contactPage {
+		padding: $spacing-sm 0;
+	}
+
+	.title {
+		font-size: 2rem;
+		margin-bottom: $spacing-xs;
+	}
+
+	.subtitle {
+		font-size: 1rem;
+		margin-bottom: $spacing-md;
+	}
+
+	.contactCard {
+		margin: 0 $spacing-sm;
+	}
+
+	.contactLink,
+	.contactItemContent {
+		padding: $spacing-sm;
+		gap: $spacing-sm;
+	}
+
+	.iconWrapper {
+		width: 50px;
+		height: 50px;
+	}
+
+	.icon {
+		font-size: 1.25rem;
+	}
+
+	.contactTitle {
+		font-size: 1.1rem;
+	}
+
+	.contactText {
+		font-size: 0.9rem;
+	}
+}

@@ -1,16 +1,19 @@
 import Header from "../Header/Header";
 import CallToAction from "../CallToAction/CallToAction";
 import Footer from "../Footer/Footer";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 const Layout = () => {
+	const location = useLocation();
+	const isContactPage = location.pathname === "/contact";
+
 	return (
 		<>
 			<Header />
 			<main>
 				<Outlet />
 			</main>
-			<CallToAction />
+			{!isContactPage && <CallToAction />}
 			<Footer />
 		</>
 	);
