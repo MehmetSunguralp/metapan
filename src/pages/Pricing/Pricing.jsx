@@ -316,7 +316,7 @@ const Pricing = () => {
 				<meta property="og:title" content="Fiyatlandırma | Tedd" />
 				<meta property="og:description" content="Metapan duvar paneli fiyat listesi. 126, 105, 118 ve 132 serisi ürünlerimizin güncel fiyatları." />
 				<meta property="og:type" content="website" />
-				<meta property="og:image" content="http://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
+				<meta property="og:image" content="https://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
 			</Helmet>
 			<section className={styles.pricingPage} ref={ref}>
 			<div className={styles.container}>

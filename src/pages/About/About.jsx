@@ -39,7 +39,7 @@ const About = () => {
 				<meta property="og:title" content="Hakkımızda | Tedd" />
 				<meta property="og:description" content="Tedd hakkında bilgi. Metapan duvar panelleri üreticisi olarak inovasyon ve kalite odaklı yaklaşımımız." />
 				<meta property="og:type" content="website" />
-				<meta property="og:image" content="http://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
+				<meta property="og:image" content="https://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
 			</Helmet>
 			<section className={styles.aboutPage} ref={ref}>
 			<div className={styles.container}>

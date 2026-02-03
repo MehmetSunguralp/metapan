@@ -15,7 +15,7 @@ const Home = () => {
 				<meta property="og:title" content="Ana Sayfa | Tedd" />
 				<meta property="og:description" content="Metapan duvar paneli çözümleri. Tedd ile modern, hafif ve verimli duvar panelleri keşfedin." />
 				<meta property="og:type" content="website" />
-				<meta property="og:image" content="http://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
+				<meta property="og:image" content="https://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
 			</Helmet>
 			<Hero />
 			<FeaturesSection />

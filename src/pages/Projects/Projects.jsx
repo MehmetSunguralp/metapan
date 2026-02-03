@@ -75,7 +75,7 @@ const Projects = () => {
 				<meta property="og:title" content="Projelerimiz | Tedd" />
 				<meta property="og:description" content="Metapan duvar paneli uygulamaları ve projelerimiz. Çelik konstrüksiyon, betonarme, tiny house ve daha fazlası." />
 				<meta property="og:type" content="website" />
-				<meta property="og:image" content="http://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
+				<meta property="og:image" content="https://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
 			</Helmet>
 			<section className={styles.projectsPage} ref={ref}>
 			<div className={styles.container}>

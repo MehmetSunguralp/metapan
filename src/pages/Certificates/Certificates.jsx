@@ -54,7 +54,7 @@ const Certificates = () => {
 				<meta property="og:title" content="Sertifikalar | Tedd" />
 				<meta property="og:description" content="Metapan duvar paneli analiz raporları ve sertifikalar. Ürün kalitemizi belgeleyen teknik dokümanlar." />
 				<meta property="og:type" content="website" />
-				<meta property="og:image" content="http://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
+				<meta property="og:image" content="https://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
 			</Helmet>
 			<section className={styles.certificatesPage} ref={ref}>
 			<div className={styles.container}>
