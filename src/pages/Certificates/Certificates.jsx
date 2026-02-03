@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { t50245report, t50245reportThumb, t50330report, t50330reportThumb } from "../../staticAssets";
@@ -46,7 +47,16 @@ const Certificates = () => {
 	};
 
 	return (
-		<section className={styles.certificatesPage} ref={ref}>
+		<>
+			<Helmet>
+				<title>Sertifikalar | Tedd</title>
+				<meta name="description" content="Metapan duvar paneli analiz raporları ve sertifikalar. Ürün kalitemizi belgeleyen teknik dokümanlar." />
+				<meta property="og:title" content="Sertifikalar | Tedd" />
+				<meta property="og:description" content="Metapan duvar paneli analiz raporları ve sertifikalar. Ürün kalitemizi belgeleyen teknik dokümanlar." />
+				<meta property="og:type" content="website" />
+				<meta property="og:image" content="http://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
+			</Helmet>
+			<section className={styles.certificatesPage} ref={ref}>
 			<div className={styles.container}>
 				<motion.h1
 					className={styles.title}
@@ -90,6 +100,7 @@ const Certificates = () => {
 				</motion.div>
 			</div>
 		</section>
+		</>
 	);
 };
 

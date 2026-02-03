@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
@@ -56,7 +57,16 @@ const Contact = () => {
 	};
 
 	return (
-		<section className={styles.contactPage} ref={ref}>
+		<>
+			<Helmet>
+				<title>İletişim | Tedd</title>
+				<meta name="description" content="Tedd ile iletişime geçin. Metapan duvar paneli hakkında sorularınız için bize ulaşın." />
+				<meta property="og:title" content="İletişim | Tedd" />
+				<meta property="og:description" content="Tedd ile iletişime geçin. Metapan duvar paneli hakkında sorularınız için bize ulaşın." />
+				<meta property="og:type" content="website" />
+				<meta property="og:image" content="http://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
+			</Helmet>
+			<section className={styles.contactPage} ref={ref}>
 			<div className={styles.container}>
 				<motion.h1
 					className={styles.title}
@@ -119,6 +129,7 @@ const Contact = () => {
 				</motion.div>
 			</div>
 		</section>
+		</>
 	);
 };
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { project1, project2, project3, project4, project5, project6 } from "../../staticAssets";
@@ -67,7 +68,16 @@ const Projects = () => {
 	};
 
 	return (
-		<section className={styles.projectsPage} ref={ref}>
+		<>
+			<Helmet>
+				<title>Projelerimiz | Tedd</title>
+				<meta name="description" content="Metapan duvar paneli uygulamaları ve projelerimiz. Çelik konstrüksiyon, betonarme, tiny house ve daha fazlası." />
+				<meta property="og:title" content="Projelerimiz | Tedd" />
+				<meta property="og:description" content="Metapan duvar paneli uygulamaları ve projelerimiz. Çelik konstrüksiyon, betonarme, tiny house ve daha fazlası." />
+				<meta property="og:type" content="website" />
+				<meta property="og:image" content="http://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
+			</Helmet>
+			<section className={styles.projectsPage} ref={ref}>
 			<div className={styles.container}>
 				<motion.h1
 					className={styles.title}
@@ -107,6 +117,7 @@ const Projects = () => {
 				/>
 			)}
 		</section>
+		</>
 	);
 };
 

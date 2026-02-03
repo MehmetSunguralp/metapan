@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { concreteBg, project4 } from "../../staticAssets";
@@ -31,7 +32,16 @@ const About = () => {
 	};
 
 	return (
-		<section className={styles.aboutPage} ref={ref}>
+		<>
+			<Helmet>
+				<title>Hakkımızda | Tedd</title>
+				<meta name="description" content="Metapan duvar panelleri üreticisi olarak inovasyon ve kalite odaklı yaklaşımımız." />
+				<meta property="og:title" content="Hakkımızda | Tedd" />
+				<meta property="og:description" content="Tedd hakkında bilgi. Metapan duvar panelleri üreticisi olarak inovasyon ve kalite odaklı yaklaşımımız." />
+				<meta property="og:type" content="website" />
+				<meta property="og:image" content="http://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
+			</Helmet>
+			<section className={styles.aboutPage} ref={ref}>
 			<div className={styles.container}>
 				<motion.div
 					className={styles.content}
@@ -84,6 +94,7 @@ const About = () => {
 				</motion.div>
 			</div>
 		</section>
+		</>
 	);
 };
 

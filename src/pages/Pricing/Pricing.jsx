@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import { useInView } from "react-intersection-observer";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaDownload } from "react-icons/fa";
@@ -308,7 +309,16 @@ const Pricing = () => {
 	};
 
 	return (
-		<section className={styles.pricingPage} ref={ref}>
+		<>
+			<Helmet>
+				<title>Fiyatlandırma | Tedd</title>
+				<meta name="description" content="Metapan duvar paneli fiyat listesi. 126, 105, 118 ve 132 serisi ürünlerimizin güncel fiyatları." />
+				<meta property="og:title" content="Fiyatlandırma | Tedd" />
+				<meta property="og:description" content="Metapan duvar paneli fiyat listesi. 126, 105, 118 ve 132 serisi ürünlerimizin güncel fiyatları." />
+				<meta property="og:type" content="website" />
+				<meta property="og:image" content="http://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
+			</Helmet>
+			<section className={styles.pricingPage} ref={ref}>
 			<div className={styles.container}>
 				<motion.h1
 					className={styles.title}
@@ -404,6 +414,7 @@ const Pricing = () => {
 				</div>
 			</div>
 		</section>
+		</>
 	);
 };
 
