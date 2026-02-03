@@ -9,7 +9,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HashRouter>
       <HelmetProvider>
-        <App />
+    <App />
       </HelmetProvider>
     </HashRouter>
   </StrictMode>,

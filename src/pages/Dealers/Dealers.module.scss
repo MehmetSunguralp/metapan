@@ -1,0 +1,317 @@
+@use "../../styles/variables" as *;
+@use "sass:color";
+
+.dealersPage {
+	padding: $spacing-xl 0;
+	background-color: $light-bg;
+	margin-top: $header-height;
+	min-height: calc(100vh - $header-height);
+
+	@media (max-width: $breakpoint-md) {
+		padding: $spacing-lg 0;
+	}
+
+	@media (max-width: 576px) {
+		padding: $spacing-md 0;
+	}
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 $spacing-md;
+	width: 100%;
+
+	@media (max-width: 576px) {
+		padding: 0 $spacing-sm;
+	}
+
+	@media (max-width: 320px) {
+		padding: 0 $spacing-xs;
+	}
+}
+
+.title {
+	font-family: $font-family-heading;
+	font-size: $font-size-h1;
+	font-weight: 700;
+	color: $text-dark;
+	text-align: center;
+	margin-bottom: $spacing-xl;
+	line-height: 1.2;
+
+	@media (max-width: $breakpoint-md) {
+		font-size: 2rem;
+		margin-bottom: $spacing-lg;
+	}
+
+	@media (max-width: 576px) {
+		font-size: 1.75rem;
+		margin-bottom: $spacing-md;
+	}
+
+	@media (max-width: 320px) {
+		font-size: 1.5rem;
+		margin-bottom: $spacing-sm;
+	}
+}
+
+.tableWrapper {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	border-radius: 8px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	background-color: $light-bg;
+
+	@media (max-width: 320px) {
+		border-radius: 4px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	}
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: $font-family-body;
+	font-size: $font-size-base;
+	background-color: $light-bg;
+
+	thead {
+		background-color: $secondary-color;
+		color: $text-light;
+
+		th {
+			padding: $spacing-md $spacing-sm;
+			text-align: left;
+			font-weight: 700;
+			font-family: $font-family-heading;
+			font-size: 1.1rem;
+			border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+
+			@media (max-width: 900px) {
+				padding: $spacing-sm;
+				font-size: 1rem;
+			}
+
+			@media (max-width: 576px) {
+				padding: $spacing-xs $spacing-sm;
+				font-size: 0.9rem;
+			}
+
+			@media (max-width: 400px) {
+				padding: $spacing-xs;
+				font-size: 0.85rem;
+			}
+
+			@media (max-width: 320px) {
+				padding: 0.4rem 0.5rem;
+				font-size: 0.8rem;
+			}
+		}
+	}
+
+	tbody {
+		tr {
+			transition: background-color $transition-base;
+
+			&:hover {
+				background-color: rgba($primary-color, 0.05);
+			}
+		}
+	}
+
+	td {
+		padding: $spacing-md $spacing-sm;
+		border-bottom: 1px solid rgba($text-dark, 0.1);
+		vertical-align: top;
+
+		@media (max-width: 900px) {
+			padding: $spacing-sm;
+		}
+
+		@media (max-width: 576px) {
+			padding: $spacing-xs $spacing-sm;
+			font-size: 0.9rem;
+		}
+
+		@media (max-width: 400px) {
+			padding: $spacing-xs;
+			font-size: 0.85rem;
+		}
+
+		@media (max-width: 320px) {
+			padding: 0.4rem 0.5rem;
+			font-size: 0.75rem;
+		}
+	}
+}
+
+// Zebra striping - açık ve koyu satırlar
+.evenRow {
+	background-color: $light-bg;
+}
+
+.oddRow {
+	background-color: rgba($text-dark, 0.03);
+}
+
+.cityCell {
+	font-weight: 600;
+	color: $secondary-color;
+	min-width: 100px;
+
+	@media (max-width: 576px) {
+		min-width: 80px;
+	}
+
+	@media (max-width: 320px) {
+		min-width: 70px;
+	}
+}
+
+.companyCell {
+	font-weight: 500;
+	min-width: 180px;
+
+	@media (max-width: 900px) {
+		min-width: 150px;
+	}
+
+	@media (max-width: 576px) {
+		min-width: 120px;
+	}
+
+	@media (max-width: 320px) {
+		min-width: 100px;
+	}
+}
+
+.addressCell {
+	color: rgba($text-dark, 0.8);
+	line-height: 1.6;
+	word-wrap: break-word;
+	max-width: 400px;
+	min-width: 250px;
+
+	@media (max-width: 900px) {
+		max-width: 300px;
+		min-width: 200px;
+	}
+
+	@media (max-width: 576px) {
+		max-width: 250px;
+		min-width: 150px;
+		font-size: 0.85rem;
+		line-height: 1.5;
+	}
+
+	@media (max-width: 400px) {
+		max-width: 200px;
+		min-width: 120px;
+		font-size: 0.8rem;
+	}
+
+	@media (max-width: 320px) {
+		max-width: 150px;
+		min-width: 100px;
+		font-size: 0.75rem;
+		line-height: 1.4;
+	}
+}
+
+.phoneCell {
+	a {
+		color: $primary-color;
+		text-decoration: none;
+		font-weight: 500;
+		transition: color $transition-base;
+		white-space: nowrap;
+
+		&:hover {
+			color: color.adjust($primary-color, $lightness: -10%);
+			text-decoration: underline;
+		}
+	}
+
+	min-width: 140px;
+
+	@media (max-width: 576px) {
+		min-width: 110px;
+	}
+
+	@media (max-width: 320px) {
+		min-width: 90px;
+	}
+}
+
+// Mobil görünümde tablo kart görünümüne dönüşür
+@media (max-width: 768px) {
+	.table {
+		thead {
+			display: none;
+		}
+
+		tbody {
+			tr {
+				display: block;
+				margin-bottom: $spacing-md;
+				border: 1px solid rgba($text-dark, 0.1);
+				border-radius: 8px;
+				overflow: hidden;
+				background-color: $light-bg;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+				&.oddRow {
+					background-color: rgba($text-dark, 0.03);
+				}
+			}
+
+			td {
+				display: block;
+				padding: $spacing-sm;
+				border-bottom: 1px solid rgba($text-dark, 0.1);
+				text-align: left;
+
+				&:last-child {
+					border-bottom: none;
+				}
+
+				&::before {
+					content: attr(data-label);
+					font-weight: 700;
+					font-family: $font-family-heading;
+					color: $secondary-color;
+					display: block;
+					margin-bottom: 0.25rem;
+					font-size: 0.9rem;
+				}
+			}
+		}
+	}
+}
+
+// 320px ve altı için ekstra küçük düzenlemeler
+@media (max-width: 320px) {
+	.tableWrapper {
+		margin: 0 -$spacing-xs;
+	}
+
+	.table {
+		tbody {
+			tr {
+				margin-bottom: $spacing-sm;
+				border-radius: 4px;
+			}
+
+			td {
+				padding: $spacing-xs;
+				font-size: 0.75rem;
+
+				&::before {
+					font-size: 0.8rem;
+					margin-bottom: 0.2rem;
+				}
+			}
+		}
+	}
+}

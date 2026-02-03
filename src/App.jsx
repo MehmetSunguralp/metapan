@@ -7,6 +7,8 @@ import Projects from "./pages/Projects/Projects";
 import Pricing from "./pages/Pricing/Pricing";
 import Certificates from "./pages/Certificates/Certificates";
 import Contact from "./pages/Contact/Contact";
+import Gallery from "./pages/Gallery/Gallery";
+import Dealers from "./pages/Dealers/Dealers";
 
 function App() {
 	return (
@@ -20,6 +22,8 @@ function App() {
 					<Route path="pricing" element={<Pricing />} />
 					<Route path="certificates" element={<Certificates />} />
 					<Route path="contact" element={<Contact />} />
+					<Route path="gallery" element={<Gallery />} />
+					<Route path="dealers" element={<Dealers />} />
 				</Route>
 			</Routes>
 		</>

@@ -44,3 +44,28 @@ export const t50245reportThumb = "https://www.tedd.com.tr/wp-content/uploads/202
 
 export const t50330report = "https://www.tedd.com.tr/wp-content/uploads/2025/02/METAPAN-T50-330-Rapor.pdf"
 export const t50330reportThumb = "https://www.tedd.com.tr/wp-content/uploads/2026/02/t50-330thumb.webp"
+
+export const utoCertificateTR = "https://www.tedd.com.tr/wp-content/uploads/2026/02/UTO-TR.pdf"
+export const utoCertificateTRThumb = "https://www.tedd.com.tr/wp-content/uploads/2026/02/UTO-TR-pdf.jpg"
+
+export const utoCertificateEN = "https://www.tedd.com.tr/wp-content/uploads/2026/02/UTO-ENG.pdf"
+export const utoCertificateENThumb = "https://www.tedd.com.tr/wp-content/uploads/2026/02/UTO-ENG-pdf.jpg"
+
+export const brandRegistration = "https://www.tedd.com.tr/wp-content/uploads/2026/02/MP-MARKA-TESCIL.pdf"
+export const brandRegistrationThumb = "https://www.tedd.com.tr/wp-content/uploads/2026/02/MP-MARKA-TESCIL-pdf.jpg"
+
+export const catalougueTR = "https://www.tedd.com.tr/wp-content/uploads/2026/02/KATALOG-TR.pdf"
+export const catalougueThumb = "https://www.tedd.com.tr/wp-content/uploads/2026/02/KATALOG-TR-pdf.jpg"
+
+export const catalogueEN = "https://www.tedd.com.tr/wp-content/uploads/2026/02/CATALOG-ENG.pdf"
+export const catalogueENThumb = "https://www.tedd.com.tr/wp-content/uploads/2026/02/CATALOG-ENG-pdf.jpg"
+
+
+export const video1 = "https://www.tedd.com.tr/wp-content/uploads/2026/02/video1.mp4"
+export const video2 = "https://www.tedd.com.tr/wp-content/uploads/2026/02/video2.mp4"
+export const video3 = "https://www.tedd.com.tr/wp-content/uploads/2026/02/video3.mp4"
+export const video4 = "https://www.tedd.com.tr/wp-content/uploads/2026/02/video4.mp4"
+export const video5 = "https://www.tedd.com.tr/wp-content/uploads/2026/02/video5.mp4"
+export const video6 = "https://www.tedd.com.tr/wp-content/uploads/2026/02/video6.mp4"
+export const video7 = "https://www.tedd.com.tr/wp-content/uploads/2026/02/video7.mp4"
+export const video8 = "https://www.tedd.com.tr/wp-content/uploads/2026/02/video8.mp4"

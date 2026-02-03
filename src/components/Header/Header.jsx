@@ -41,8 +41,10 @@ const Header = () => {
 		{ label: "Anasayfa", href: "/" },
 		{ label: "Hakkında", href: "/about" },
 		{ label: "Projeler", href: "/projects" },
+		{ label: "Galeri", href: "/gallery" },
 		{ label: "Fiyat Listesi", href: "/pricing" },
-		{ label: "Belgeler", href: "/certificates" },
+		{ label: "Dokümanlar", href: "/certificates" },
+		{ label: "Bayiler", href: "/dealers" },
 		{ label: "İletişim", href: "/contact" },
 	];
 
