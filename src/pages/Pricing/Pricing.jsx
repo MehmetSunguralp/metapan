@@ -21,7 +21,7 @@ import {
 import styles from "./Pricing.module.scss";
 
 const Pricing = () => {
-	const [activeSeries, setActiveSeries] = useState("126");
+	const [activeSeries, setActiveSeries] = useState(null);
 	const headerRefs = useRef({});
 	const [ref, inView] = useInView({
 		threshold: 0.1,
@@ -247,7 +247,63 @@ const Pricing = () => {
 
 	const handleSeriesToggle = (seriesId) => {
 		const wasOpen = activeSeries === seriesId;
-		setActiveSeries(wasOpen ? null : seriesId);
+		
+		// First close all accordions to reset page height
+		if (activeSeries !== null) {
+			setActiveSeries(null);
+			
+			// Wait for accordion to close, then open the clicked one
+			setTimeout(() => {
+				if (!wasOpen) {
+					setActiveSeries(seriesId);
+					
+					// Scroll to accordion header after opening
+					setTimeout(() => {
+						const headerElement = headerRefs.current[seriesId];
+						if (headerElement) {
+							const headerHeight = 80; // $header-height from variables
+							const offset = 10; // Small additional offset
+							
+							// Get element position relative to document
+							const elementRect = headerElement.getBoundingClientRect();
+							const elementTop = elementRect.top + window.pageYOffset;
+							
+							// Calculate target scroll position
+							const targetScroll = elementTop - headerHeight - offset;
+
+							window.scrollTo({
+								top: Math.max(0, targetScroll), // Ensure not negative
+								behavior: "smooth",
+							});
+						}
+					}, 300); // Wait for accordion to fully open
+				}
+			}, 300); // Wait for accordion to fully close
+		} else {
+			// No accordion is open, just open the clicked one
+			setActiveSeries(seriesId);
+			
+			// Scroll to accordion header after opening
+			setTimeout(() => {
+				const headerElement = headerRefs.current[seriesId];
+				if (headerElement) {
+					const headerHeight = 80; // $header-height from variables
+					const offset = 10; // Small additional offset
+					
+					// Get element position relative to document
+					const elementRect = headerElement.getBoundingClientRect();
+					const elementTop = elementRect.top + window.pageYOffset;
+					
+					// Calculate target scroll position
+					const targetScroll = elementTop - headerHeight - offset;
+
+					window.scrollTo({
+						top: Math.max(0, targetScroll), // Ensure not negative
+						behavior: "smooth",
+					});
+				}
+			}, 300); // Wait for accordion to fully open
+		}
 	};
 
 	return (
