@@ -1,39 +1,24 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { useLanguage } from "../../contexts/LanguageContext";
 import styles from "./FeaturesSection.module.scss";
 import verimlilikIcon from "../../assets/custom_icons/verimlilik.png";
 import hafifIcon from "../../assets/custom_icons/hafif.png";
 import yalitimIcon from "../../assets/custom_icons/yalitim.png";
 
 const FeaturesSection = () => {
+	const { strings } = useLanguage();
 	const [ref, inView] = useInView({
 		threshold: 0.1,
 		triggerOnce: true,
 	});
 
-	const features = [
-		{
-			id: 1,
-			icon: verimlilikIcon,
-			title: "Eşsiz Verimlilik",
-			description:
-				"Hafif yalıtımlı beton bloklarla inşa etmek, geleneksel yöntemlere göre 5 kata kadar daha hızlıdır ve projelerinizi daha hızlı ve daha verimli bir şekilde tamamlamanıza olanak tanır.",
-		},
-		{
-			id: 2,
-			icon: hafifIcon,
-			title: "Şaşırtıcı Hafiflik",
-			description:
-				"Geleneksel duvar işçiliğine kıyasla ağırlığı %46'ya varan oranda azalan yalıtımlı hafif beton blok, taşıma ve nakliyeyi kolaylaştırarak inşaatı daha çevik ve ekonomik hale getirir.",
-		},
-		{
-			id: 3,
-			icon: yalitimIcon,
-			title: "Isı Ve Akustik Yalıtım",
-			description:
-				"Mükemmel ısı ve ses yalıtımı özellikleri sağlayan, enerji tasarrufu ve ailenizin refahını garanti eden Hafif Yalıtımlı Beton Blok ile daha konforlu ve huzurlu bir ortamın tadını çıkarın!",
-		},
-	];
+	const icons = [verimlilikIcon, hafifIcon, yalitimIcon];
+	const features = strings.features.items.map((feature, index) => ({
+		...feature,
+		id: index + 1,
+		icon: icons[index],
+	}));
 
 	const containerVariants = {
 		hidden: { opacity: 0 },

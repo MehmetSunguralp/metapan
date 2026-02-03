@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "../../contexts/LanguageContext";
 import NavLink from "../NavLink/NavLink";
-import SocialIcons from "../SocialIcons/SocialIcons";
+import LanguageSelector from "../LanguageSelector/LanguageSelector";
 import styles from "./Header.module.scss";
 import { logo } from "../../staticAssets";
 
 const Header = () => {
 	const location = useLocation();
+	const { strings } = useLanguage();
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -38,14 +40,14 @@ const Header = () => {
 	}, [isMobileMenuOpen]);
 
 	const navItems = [
-		{ label: "Anasayfa", href: "/" },
-		{ label: "Hakkında", href: "/about" },
-		{ label: "Projeler", href: "/projects" },
-		{ label: "Galeri", href: "/gallery" },
-		{ label: "Fiyat Listesi", href: "/pricing" },
-		{ label: "Dokümanlar", href: "/certificates" },
-		{ label: "Bayiler", href: "/dealers" },
-		{ label: "İletişim", href: "/contact" },
+		{ label: strings.nav.home, href: "/" },
+		{ label: strings.nav.about, href: "/about" },
+		{ label: strings.nav.projects, href: "/projects" },
+		{ label: strings.nav.gallery, href: "/gallery" },
+		{ label: strings.nav.pricing, href: "/pricing" },
+		{ label: strings.nav.certificates, href: "/certificates" },
+		{ label: strings.nav.dealers, href: "/dealers" },
+		{ label: strings.nav.contact, href: "/contact" },
 	];
 
 	const toggleMobileMenu = () => {
@@ -70,7 +72,7 @@ const Header = () => {
 					<nav className={styles.nav}>
 						{navItems.map((item, index) => (
 							<motion.div
-								key={item.label}
+								key={item.href}
 								initial={{ opacity: 0, y: -20 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ delay: index * 0.1 }}
@@ -82,7 +84,9 @@ const Header = () => {
 						))}
 					</nav>
 
-					<SocialIcons className={styles.socialIcons} />
+					<div className={styles.rightSection}>
+						<LanguageSelector />
+					</div>
 
 					<button
 						className={styles.hamburger}
@@ -140,7 +144,7 @@ const Header = () => {
 							<nav className={styles.mobileNav}>
 								{navItems.map((item, index) => (
 									<motion.div
-										key={item.label}
+										key={item.href}
 										initial={{ opacity: 0, y: -20 }}
 										animate={{ opacity: 1, y: 0 }}
 										transition={{ delay: index * 0.1, duration: 0.3 }}
@@ -156,12 +160,12 @@ const Header = () => {
 								))}
 							</nav>
 							<motion.div
-								className={styles.mobileSocialIcons}
+								className={styles.mobileLanguageSelector}
 								initial={{ opacity: 0, y: 20 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ delay: navItems.length * 0.1, duration: 0.3 }}
 							>
-								<SocialIcons />
+								<LanguageSelector />
 							</motion.div>
 						</motion.div>
 					</>

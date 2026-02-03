@@ -1,9 +1,11 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { useLanguage } from "../../contexts/LanguageContext";
 import { concreteBg } from "../../staticAssets";
 import styles from "./TestimonialSection.module.scss";
 
 const TestimonialSection = () => {
+	const { strings } = useLanguage();
 	const [ref, inView] = useInView({
 		threshold: 0.2,
 		triggerOnce: true,
@@ -22,8 +24,7 @@ const TestimonialSection = () => {
 				>
 					<div className={styles.quoteMark}>"</div>
 					<blockquote className={styles.quote}>
-						Duvar panelleri, yaşam alanlarınıza estetik ve işlevsellik kazandırmanın en şık yollarından biridir. Geniş ürün
-						yelpazemiz, farklı renk, desen ve doku seçenekleriyle her tarza hitap eder.
+						{strings.testimonial.quote}
 					</blockquote>
 				</motion.div>
 			</div>

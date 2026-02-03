@@ -1,32 +1,29 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../../contexts/LanguageContext";
 import { project1, project2, project3 } from "../../staticAssets";
 import styles from "./ProjectsPreviewSection.module.scss";
 
 const ProjectsPreviewSection = () => {
+	const { strings } = useLanguage();
 	const [ref, inView] = useInView({
 		threshold: 0.1,
 		triggerOnce: true,
 	});
 
-	const projects = [
-		{
-			id: 1,
-			image: project1,
-			title: "Çelik Konstrüksiyon",
-		},
-		{
-			id: 2,
-			image: project2,
-			title: "Betonarme",
-		},
-		{
-			id: 3,
-			image: project3,
-			title: "Tiny House",
-		},
+	const images = [project1, project2, project3];
+	const projectTitles = [
+		strings.projectsPreview.projectTitles.steel,
+		strings.projectsPreview.projectTitles.concrete,
+		strings.projectsPreview.projectTitles.tinyHouse,
 	];
+
+	const projects = images.map((image, index) => ({
+		id: index + 1,
+		image,
+		title: projectTitles[index],
+	}));
 
 	const containerVariants = {
 		hidden: { opacity: 0 },
@@ -59,10 +56,10 @@ const ProjectsPreviewSection = () => {
 					transition={{ duration: 0.6 }}
 				>
 					<h2 className={styles.title}>
-						<span className={styles.titleLine}></span> Projelerimizi Keşfedin
+						<span className={styles.titleLine}></span> {strings.projectsPreview.title}
 					</h2>
 					<Link to="/projects" className={styles.viewAllLink}>
-						Tüm Projeleri Gör<span className={styles.arrow}>▸</span>
+						{strings.projectsPreview.viewAll}<span className={styles.arrow}>▸</span>
 					</Link>
 				</motion.div>
 

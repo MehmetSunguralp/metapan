@@ -1,10 +1,13 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { useLanguage } from "../../contexts/LanguageContext";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
+import SocialIcons from "../SocialIcons/SocialIcons";
 import { logo } from "../../staticAssets";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
+	const { strings } = useLanguage();
 	const [ref, inView] = useInView({
 		threshold: 0.1,
 		triggerOnce: true,
@@ -16,17 +19,17 @@ const Footer = () => {
 		{
 			id: "address",
 			icon: FaMapMarkerAlt,
-			text: "75. YIL OSB MAH. 20 CAD. NO: 8 ODUNPAZARI/ ESKİŞEHİR",
+			text: strings.footer.contact.address,
 		},
 		{
 			id: "phone",
 			icon: FaPhone,
-			text: "+90 222 711 2611",
+			text: strings.footer.contact.phone,
 		},
 		{
 			id: "email",
 			icon: FaEnvelope,
-			text: "metapanduvarpanelleri@gmail.com",
+			text: strings.footer.contact.email,
 		},
 	];
 
@@ -64,7 +67,7 @@ const Footer = () => {
 						<div className={styles.logo}>
 							<img src={logo} alt="TEDD Logo" />
 						</div>
-						<p className={styles.description}>TEDD DUVAR PANELLERİ VE YAPI MALZEMELERİ SANAYİ TİCARET LİMİTED ŞİRKETİ.</p>
+						<p className={styles.description}>{strings.footer.description}</p>
 					</motion.div>
 
 					<motion.div className={styles.footerRight} variants={itemVariants}>
@@ -79,6 +82,9 @@ const Footer = () => {
 								</motion.div>
 							);
 						})}
+						<motion.div className={styles.socialIconsWrapper} variants={itemVariants}>
+							<SocialIcons />
+						</motion.div>
 					</motion.div>
 				</motion.div>
 			</div>
@@ -90,7 +96,7 @@ const Footer = () => {
 					animate={inView ? { opacity: 1 } : {}}
 					transition={{ delay: 0.5 }}
 				>
-					<p className={styles.copyright}>© {currentYear} tedd.com.tr Tüm hakları saklıdır.</p>
+					<p className={styles.copyright}>{strings.footer.copyright.replace("{year}", currentYear)}</p>
 				</motion.div>
 			</div>
 		</footer>

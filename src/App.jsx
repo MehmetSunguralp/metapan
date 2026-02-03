@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { LanguageProvider } from "./contexts/LanguageContext";
 import Layout from "./components/Layout/Layout";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Home from "./pages/Home/Home";
@@ -12,7 +13,7 @@ import Dealers from "./pages/Dealers/Dealers";
 
 function App() {
 	return (
-		<>
+		<LanguageProvider>
 			<ScrollToTop />
 			<Routes>
 				<Route path="/" element={<Layout />}>
@@ -26,7 +27,7 @@ function App() {
 					<Route path="dealers" element={<Dealers />} />
 				</Route>
 			</Routes>
-		</>
+		</LanguageProvider>
 	);
 }
 

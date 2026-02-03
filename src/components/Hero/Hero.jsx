@@ -1,12 +1,14 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../../contexts/LanguageContext";
 import Button from "../Button/Button";
 import { heroImage } from "../../staticAssets";
 import styles from "./Hero.module.scss";
 
 const Hero = () => {
 	const navigate = useNavigate();
+	const { strings } = useLanguage();
 	const [ref, inView] = useInView({
 		threshold: 0.1,
 		triggerOnce: true,
@@ -40,17 +42,17 @@ const Hero = () => {
 			<div className={styles.container}>
 				<motion.div className={styles.content} variants={textVariants} initial="hidden" animate={inView ? "visible" : "hidden"}>
 					<motion.h1 className={styles.mainHeading} variants={textVariants}>
-						METAPAN
+						{strings.hero.title}
 					</motion.h1>
 					<motion.h2 className={styles.subheading} variants={textVariants}>
-						Yenilikçi Yapı Çözümleri!
+						{strings.hero.subtitle}
 					</motion.h2>
 					<motion.p className={styles.description} variants={textVariants}>
-						İnşaat sektöründe yaşanan uluslararası gelişmeleri Türkiye'ye taşıyor, sektörün geleceğini bugünden kuruyoruz.
+						{strings.hero.description}
 					</motion.p>
 					<motion.div variants={textVariants}>
 						<Button variant="dark" size="large" onClick={() => navigate("/projects")}>
-							Projelere Göz Atın <span className={styles.arrow}>▸</span>
+							{strings.hero.cta} <span className={styles.arrow}>▸</span>
 						</Button>
 					</motion.div>
 				</motion.div>

@@ -143,6 +143,22 @@
   }
 }
 
+.socialIconsWrapper {
+  margin-top: $spacing-sm;
+  padding-top: $spacing-md;
+  border-top: 1px solid rgba($text-dark, 0.1);
+
+  @media (max-width: 576px) {
+    margin-top: $spacing-xs;
+    padding-top: $spacing-sm;
+  }
+
+  @media (max-width: 320px) {
+    margin-top: 0.4rem;
+    padding-top: $spacing-xs;
+  }
+}
+
 .contactItem {
   display: flex;
   align-items: flex-start;

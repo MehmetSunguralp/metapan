@@ -1,5 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { useLanguage } from "../../contexts/LanguageContext";
 import styles from "./WhyChooseSection.module.scss";
 import cevreciIcon from "../../assets/features_icons/cevreci.png";
 import ekonomikIcon from "../../assets/features_icons/ekonomik.png";
@@ -11,63 +12,28 @@ import nefesAlirIcon from "../../assets/features_icons/nefes_alir.png";
 import kolaySekillendirilebilirIcon from "../../assets/features_icons/kolay_sekillendirilebilir.png";
 
 const WhyChooseSection = () => {
+	const { strings } = useLanguage();
 	const [ref, inView] = useInView({
 		threshold: 0.1,
 		triggerOnce: true,
 	});
 
-	const features = [
-		{
-			id: 1,
-			title: "ÇEVRECİ",
-			description: "METAPAN duvar elemanları çevrecidir, doğaya zarar vermez ve sürdürülebilirdir.",
-			icon: cevreciIcon,
-		},
-		{
-			id: 2,
-			title: "EKONOMİK",
-			description: "Hafif ve kolay uygulanabilir yapısıyla işçilik ve mantolama maliyetlerini düşürür.",
-			icon: ekonomikIcon,
-		},
-		{
-			id: 3,
-			title: "HAFİF",
-			description: "Hafif yapısı sayesinde taşıması kolaydır ve deprem yükünü azaltır.",
-			icon: hafifIcon,
-		},
-		{
-			id: 4,
-			title: "SAĞLIKLI",
-			description: "Asbest içermez, daha sağlıklı yaşam alanları oluşturur.",
-			icon: saglikliIcon,
-		},
-		{
-			id: 5,
-			title: "YANMAZ",
-			description: "A1 sınıfı yanmaz özelliğe sahiptir, alev almaz ve yangına karşı güvenlidir.",
-			icon: yanmazIcon,
-		},
-		{
-			id: 6,
-			title: "İZOLASYONLU",
-			description: "Isı ve ses yalıtımı sağlar, mantolama gerektirmeden %60-80 enerji tasarrufu sunar.",
-			icon: izolasyonluIcon,
-		},
-		{
-			id: 7,
-			title: "NEFES ALIR",
-			description: "Nefes alan yapısı küf ve bakteri oluşumunu engeller.",
-			icon: nefesAlirIcon,
-		},
-		{
-			id: 8,
-			title: "KOLAY ŞEKİLLENDİRİLEBİLİR",
-			titleLine1: "KOLAY",
-			titleLine2: "ŞEKİLLENDİRİLEBİLİR",
-			description: "İstenilen ölçü ve formda üretilebilir, yerinde döküme ve tünel kalıba uygundur.",
-			icon: kolaySekillendirilebilirIcon,
-		},
+	const icons = [
+		cevreciIcon,
+		ekonomikIcon,
+		hafifIcon,
+		saglikliIcon,
+		yanmazIcon,
+		izolasyonluIcon,
+		nefesAlirIcon,
+		kolaySekillendirilebilirIcon,
 	];
+
+	const features = strings.whyChoose.features.map((feature, index) => ({
+		...feature,
+		id: index + 1,
+		icon: icons[index],
+	}));
 
 	const containerVariants = {
 		hidden: { opacity: 0 },
@@ -99,7 +65,7 @@ const WhyChooseSection = () => {
 					animate={inView ? { opacity: 1, y: 0 } : {}}
 					transition={{ duration: 0.6 }}
 				>
-					<span className={styles.titleLine}></span> Neden METAPAN Tercih Etmelisin?
+					<span className={styles.titleLine}></span> {strings.whyChoose.title}
 				</motion.h2>
 
 				<motion.div className={styles.grid} variants={containerVariants} initial="hidden" animate={inView ? "visible" : "hidden"}>

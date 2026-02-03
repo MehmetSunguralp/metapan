@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { useLanguage } from "../../contexts/LanguageContext";
 import { FaPlay } from "react-icons/fa";
 import VideoModal from "../../components/VideoModal/VideoModal";
 import {
@@ -17,6 +18,7 @@ import {
 import styles from "./Gallery.module.scss";
 
 const Gallery = () => {
+	const { strings, language } = useLanguage();
 	const [selectedVideo, setSelectedVideo] = useState(null);
 	const [ref, inView] = useInView({
 		threshold: 0.1,
@@ -57,11 +59,11 @@ const Gallery = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Galeri | Tedd</title>
-				<meta name="description" content="Metapan duvar paneli uygulama videoları ve galeri. Projelerimizden görüntüler ve montaj videoları." />
-				<meta property="og:title" content="Galeri | Tedd" />
-				<meta property="og:description" content="Metapan duvar paneli uygulama videoları ve galeri. Projelerimizden görüntüler ve montaj videoları." />
+			<Helmet key={language}>
+				<title>{strings.pages.gallery.title}</title>
+				<meta name="description" content={strings.pages.gallery.description} />
+				<meta property="og:title" content={strings.pages.gallery.title} />
+				<meta property="og:description" content={strings.pages.gallery.description} />
 				<meta property="og:type" content="website" />
 				<meta property="og:image" content="https://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
 			</Helmet>
@@ -73,7 +75,7 @@ const Gallery = () => {
 						animate={inView ? { opacity: 1, y: 0 } : {}}
 						transition={{ duration: 0.6 }}
 					>
-						Galeri
+						{strings.pages.gallery.pageTitle}
 					</motion.h1>
 
 					<motion.div

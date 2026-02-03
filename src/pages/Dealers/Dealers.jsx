@@ -1,9 +1,11 @@
 import { Helmet } from "react-helmet-async";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { useLanguage } from "../../contexts/LanguageContext";
 import styles from "./Dealers.module.scss";
 
 const Dealers = () => {
+	const { strings, language } = useLanguage();
 	const [ref, inView] = useInView({
 		threshold: 0.1,
 		triggerOnce: true,
@@ -85,12 +87,13 @@ const Dealers = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Yetkili Bayiler | METAPAN</title>
-				<meta name="description" content="METAPAN duvar paneli yetkili bayileri. Şehir bazında bayilerimizin iletişim bilgileri." />
-				<meta property="og:title" content="Yetkili Bayiler | METAPAN" />
-				<meta property="og:description" content="METAPAN duvar paneli yetkili bayileri. Şehir bazında bayilerimizin iletişim bilgileri." />
+			<Helmet key={language}>
+				<title>{strings.pages.dealers.title}</title>
+				<meta name="description" content={strings.pages.dealers.description} />
+				<meta property="og:title" content={strings.pages.dealers.title} />
+				<meta property="og:description" content={strings.pages.dealers.description} />
 				<meta property="og:type" content="website" />
+				<meta property="og:image" content="https://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
 			</Helmet>
 			<section className={styles.dealersPage} ref={ref}>
 				<div className={styles.container}>
@@ -100,7 +103,7 @@ const Dealers = () => {
 						animate={inView ? { opacity: 1, y: 0 } : {}}
 						transition={{ duration: 0.6 }}
 					>
-						Yetkili Bayiler
+						{strings.pages.dealers.pageTitle}
 					</motion.h1>
 
 					<motion.div
@@ -112,19 +115,19 @@ const Dealers = () => {
 						<table className={styles.table}>
 							<thead>
 								<tr>
-									<th>Şehir</th>
-									<th>Firma</th>
-									<th>Adres</th>
-									<th>Telefon</th>
+									<th>{strings.pages.dealers.table.city}</th>
+									<th>{strings.pages.dealers.table.company}</th>
+									<th>{strings.pages.dealers.table.address}</th>
+									<th>{strings.pages.dealers.table.phone}</th>
 								</tr>
 							</thead>
 							<tbody>
 								{dealers.map((dealer, index) => (
 									<tr key={dealer.id} className={index % 2 === 0 ? styles.evenRow : styles.oddRow}>
-										<td className={styles.cityCell} data-label="Şehir:">{dealer.city}</td>
-										<td className={styles.companyCell} data-label="Firma:">{dealer.company}</td>
-										<td className={styles.addressCell} data-label="Adres:">{dealer.address}</td>
-										<td className={styles.phoneCell} data-label="Telefon:">
+										<td className={styles.cityCell} data-label={`${strings.pages.dealers.table.city}:`}>{dealer.city}</td>
+										<td className={styles.companyCell} data-label={`${strings.pages.dealers.table.company}:`}>{dealer.company}</td>
+										<td className={styles.addressCell} data-label={`${strings.pages.dealers.table.address}:`}>{dealer.address}</td>
+										<td className={styles.phoneCell} data-label={`${strings.pages.dealers.table.phone}:`}>
 											<a href={`tel:${dealer.phone.replace(/\s/g, "")}`}>{dealer.phone}</a>
 										</td>
 									</tr>

@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { useInView } from "react-intersection-observer";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "../../contexts/LanguageContext";
 import { FaDownload } from "react-icons/fa";
 import {
 	panelThumb5,
@@ -23,6 +24,7 @@ import {
 import styles from "./Pricing.module.scss";
 
 const Pricing = () => {
+	const { strings, language } = useLanguage();
 	const [activeSeries, setActiveSeries] = useState(null);
 	const headerRefs = useRef({});
 	const [ref, inView] = useInView({
@@ -241,10 +243,10 @@ const Pricing = () => {
 	];
 
 	const series = [
-		{ id: "126", name: "126 Serisi", data: series126 },
-		{ id: "105", name: "105 Serisi", data: series105 },
-		{ id: "118", name: "118 Serisi", data: series118 },
-		{ id: "132", name: "132 Serisi", data: series132 },
+		{ id: "126", name: strings.pages.pricing.series["126"], data: series126 },
+		{ id: "105", name: strings.pages.pricing.series["105"], data: series105 },
+		{ id: "118", name: strings.pages.pricing.series["118"], data: series118 },
+		{ id: "132", name: strings.pages.pricing.series["132"], data: series132 },
 	];
 
 	const handleSeriesToggle = (seriesId) => {
@@ -310,11 +312,11 @@ const Pricing = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>Fiyatlandırma | Tedd</title>
-				<meta name="description" content="Metapan duvar paneli fiyat listesi. 126, 105, 118 ve 132 serisi ürünlerimizin güncel fiyatları." />
-				<meta property="og:title" content="Fiyatlandırma | Tedd" />
-				<meta property="og:description" content="Metapan duvar paneli fiyat listesi. 126, 105, 118 ve 132 serisi ürünlerimizin güncel fiyatları." />
+			<Helmet key={language}>
+				<title>{strings.pages.pricing.title}</title>
+				<meta name="description" content={strings.pages.pricing.description} />
+				<meta property="og:title" content={strings.pages.pricing.title} />
+				<meta property="og:description" content={strings.pages.pricing.description} />
 				<meta property="og:type" content="website" />
 				<meta property="og:image" content="https://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
 			</Helmet>
@@ -326,7 +328,7 @@ const Pricing = () => {
 					animate={inView ? { opacity: 1, y: 0 } : {}}
 					transition={{ duration: 0.6 }}
 				>
-					Fiyat Listesi
+					{strings.pages.pricing.pageTitle}
 				</motion.h1>
 
 				<motion.div
@@ -337,7 +339,7 @@ const Pricing = () => {
 				>
 				<a href={priceList2026} target="_blank" rel="noopener noreferrer" className={styles.downloadLink}>
 					<FaDownload className={styles.downloadIcon} />
-					METAPAN 2026 Fiyat Listesi İndir
+					{strings.pages.pricing.download}
 				</a>
 				</motion.div>
 
@@ -374,11 +376,11 @@ const Pricing = () => {
 												<thead>
 													<tr>
 														<th></th>
-														<th>Model</th>
-														<th>Ebat (cm)</th>
-														<th>Ağırlık (kg)</th>
-														<th>Alan (m²)</th>
-														<th>Fiyat (₺/m²)</th>
+														<th>{strings.pages.pricing.table.model}</th>
+														<th>{strings.pages.pricing.table.dimensions}</th>
+														<th>{strings.pages.pricing.table.weight}</th>
+														<th>{strings.pages.pricing.table.area}</th>
+														<th>{strings.pages.pricing.table.price}</th>
 													</tr>
 												</thead>
 												<tbody>

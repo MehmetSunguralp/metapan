@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../../contexts/LanguageContext";
 import Button from "../Button/Button";
 import VideoModal from "../VideoModal/VideoModal";
 import { panelCloseUp, installationVideo2, installationVideo2Thumb } from "../../staticAssets";
@@ -10,6 +11,7 @@ import { FaPlay } from "react-icons/fa";
 
 const AboutSection = () => {
 	const navigate = useNavigate();
+	const { strings } = useLanguage();
 	const [isVideoOpen, setIsVideoOpen] = useState(false);
 	const [ref, inView] = useInView({
 		threshold: 0.1,
@@ -48,7 +50,7 @@ const AboutSection = () => {
 					animate={inView ? { opacity: 1, y: 0 } : {}}
 					transition={{ duration: 0.6 }}
 				>
-					<span className={styles.titleLine}></span> METAPAN Nedir?
+					<span className={styles.titleLine}></span> {strings.aboutSection.title}
 				</motion.h2>
 
 				<div className={styles.content}>
@@ -75,18 +77,17 @@ const AboutSection = () => {
 						</button>
 
 						<motion.p className={styles.description} variants={textVariants}>
-							METAPAN, EPS esaslı hammaddesi ile çimento ve özel bileşenlerin birleşiminden oluşan; hafif, dayanıklı, çok amaçlı
-							kullanıma uygun ve muadillerine göre daha yüksek ısı-ses yalıtımı sağlayan yeni nesil duvar panelidir.
-							<br />
-							- Isı yalıtım değeri 0,06 W/mK’dir ve EK YALITIM GEREKTİRMEZ.
-							<br />
-							- 1 m³ METAPAN panel 300 kg ağırlığındadır ve binaların deprem yüklerini azaltarak statik hesaplarda avantaj sağlar.
-							<br />- Daha az sıva uygulaması ile yüzey kaplaması tamamlanır ve işçilik maliyetlerini düşürür.
+							{strings.aboutSection.description.split("\n").map((line, index) => (
+								<span key={index}>
+									{line}
+									{index < strings.aboutSection.description.split("\n").length - 1 && <br />}
+								</span>
+							))}
 						</motion.p>
 
 						<motion.div variants={textVariants}>
 							<Button variant="dark" size="large" onClick={() => navigate("/about")}>
-								Hakkımızda <span className={styles.arrow}>▸</span>
+								{strings.aboutSection.cta} <span className={styles.arrow}>▸</span>
 							</Button>
 						</motion.div>
 					</motion.div>
