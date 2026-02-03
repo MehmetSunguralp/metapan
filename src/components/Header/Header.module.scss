@@ -26,6 +26,21 @@
   align-items: center;
   justify-content: space-between;
   gap: $spacing-md;
+
+  @media (max-width: 1100px) {
+    gap: $spacing-sm;
+    padding: 0 $spacing-sm;
+  }
+
+  @media (max-width: 900px) {
+    gap: $spacing-xs;
+    padding: 0 $spacing-sm;
+  }
+
+  @media (max-width: 320px) {
+    padding: 0 $spacing-sm;
+    gap: $spacing-sm;
+  }
 }
 
 .logo {
@@ -36,11 +51,30 @@
   font-weight: 700;
   color: $text-dark;
   cursor: pointer;
+  z-index: calc($z-overlay + 1);
+  flex-shrink: 0;
 
   img {
     max-height: 50px;
     width: auto;
     object-fit: contain;
+    transition: max-height $transition-base;
+
+    @media (max-width: 1100px) {
+      max-height: 45px;
+    }
+
+    @media (max-width: 900px) {
+      max-height: 40px;
+    }
+
+    @media (max-width: 768px) {
+      max-height: 40px;
+    }
+
+    @media (max-width: 320px) {
+      max-height: 35px;
+    }
   }
 }
 
@@ -66,6 +100,15 @@
   gap: $spacing-sm;
   flex: 1;
   justify-content: center;
+  min-width: 0;
+
+  @media (max-width: 1100px) {
+    gap: $spacing-xs;
+  }
+
+  @media (max-width: 900px) {
+    gap: 0.4rem;
+  }
 
   @media (max-width: $breakpoint-md) {
     display: none;
@@ -75,5 +118,132 @@
 .socialIcons {
   @media (max-width: $breakpoint-md) {
     display: none;
+  }
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-xs;
+  z-index: calc($z-overlay + 1);
+  position: relative;
+  flex-shrink: 0;
+
+  @media (max-width: $breakpoint-md) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+.hamburgerIcon {
+  width: 24px;
+  height: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: $text-dark;
+    border-radius: 2px;
+    transition: all $transition-base;
+  }
+}
+
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: calc($z-overlay - 1);
+  backdrop-filter: blur(4px);
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: calc(100% - 80px);
+  max-width: 400px;
+  background-color: $light-bg;
+  z-index: $z-overlay;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-xl $spacing-md;
+  padding-top: calc($header-height + $spacing-lg);
+
+  @media (max-width: 320px) {
+    width: calc(100% - 60px);
+    padding: $spacing-lg $spacing-sm;
+    padding-top: calc($header-height + $spacing-md);
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 320px) {
+    gap: $spacing-sm;
+  }
+
+  a {
+    font-size: 1.25rem;
+    padding: $spacing-sm 0;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    @media (max-width: 320px) {
+      font-size: 1.1rem;
+      padding: $spacing-xs 0;
+    }
+
+    &.active {
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+      }
+    }
+  }
+}
+
+.mobileSocialIcons {
+  margin-top: $spacing-lg;
+  padding-top: $spacing-lg;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 320px) {
+    margin-top: $spacing-md;
+    padding-top: $spacing-md;
   }
 }
