@@ -293,7 +293,7 @@
 // 320px ve altı için ekstra küçük düzenlemeler
 @media (max-width: 320px) {
 	.tableWrapper {
-		margin: 0 -$spacing-xs;
+		margin: 0 (-$spacing-xs);
 	}
 
 	.table {

@@ -222,4 +222,11 @@ export const enStrings = {
 			},
 		},
 	},
+	// PDF Modal
+	pdfModal: {
+		download: "Download",
+		loading: "Loading PDF...",
+		error: "An error occurred while loading the PDF.",
+		openInNewTab: "Open in new tab",
+	},
 };

@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { useLanguage } from "../../contexts/LanguageContext";
+import PDFModal from "../../components/PDFModal/PDFModal";
 import {
 	utoCertificateTR,
 	utoCertificateTRThumb,
@@ -26,6 +28,8 @@ const Certificates = () => {
 		threshold: 0.1,
 		triggerOnce: true,
 	});
+	const [selectedPDF, setSelectedPDF] = useState(null);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	const thumbnails = [
 		utoCertificateTRThumb,
@@ -61,6 +65,16 @@ const Certificates = () => {
 		thumbnail,
 		pdf: pdfs[index],
 	}));
+
+	const handleCertificateClick = (certificate) => {
+		setSelectedPDF(certificate);
+		setIsModalOpen(true);
+	};
+
+	const handleCloseModal = () => {
+		setIsModalOpen(false);
+		setSelectedPDF(null);
+	};
 
 	const containerVariants = {
 		hidden: { opacity: 0 },
@@ -118,11 +132,10 @@ const Certificates = () => {
 								whileHover={{ y: -5, scale: 1.02 }}
 								transition={{ duration: 0.3 }}
 							>
-								<a
-									href={certificate.pdf}
-									target="_blank"
-									rel="noopener noreferrer"
+								<button
+									onClick={() => handleCertificateClick(certificate)}
 									className={styles.certificateLink}
+									aria-label={`View ${certificate.title}`}
 								>
 									<div className={styles.imageWrapper}>
 										<img src={certificate.thumbnail} alt={certificate.title} />
@@ -131,12 +144,20 @@ const Certificates = () => {
 										</div>
 									</div>
 									<h3 className={styles.certificateTitle}>{certificate.title}</h3>
-								</a>
+								</button>
 							</motion.div>
 						))}
 					</motion.div>
 				</div>
 			</section>
+			{selectedPDF && (
+				<PDFModal
+					isOpen={isModalOpen}
+					onClose={handleCloseModal}
+					pdfUrl={selectedPDF.pdf}
+					title={selectedPDF.title}
+				/>
+			)}
 		</>
 	);
 };

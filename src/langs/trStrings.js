@@ -222,4 +222,11 @@ export const trStrings = {
 			},
 		},
 	},
+	// PDF Modal
+	pdfModal: {
+		download: "İndir",
+		loading: "PDF yükleniyor...",
+		error: "PDF yüklenirken bir hata oluştu.",
+		openInNewTab: "Yeni sekmede aç",
+	},
 };
