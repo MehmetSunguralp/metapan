@@ -3,7 +3,8 @@ export const enStrings = {
 	nav: {
 		home: "Home",
 		about: "About",
-		projects: "Projects",
+		whyChoose: "Why METAPAN",
+		projects: "Applications",
 		gallery: "Gallery",
 		pricing: "Pricing",
 		certificates: "Documents",
@@ -16,7 +17,7 @@ export const enStrings = {
 		title: "METAPAN",
 		subtitle: "Innovative Building Solutions!",
 		description: "We bring international developments in the construction industry to Turkey, building the future of the sector today.",
-		cta: "View Projects",
+		cta: "View Applications",
 	},
 
 	// Features Section
@@ -64,7 +65,7 @@ export const enStrings = {
 
 	// Testimonial Section
 	testimonial: {
-		quote: `Wall panels are one of the most elegant ways to add aesthetics and functionality to your living spaces. Our wide product range appeals to every style with different color, pattern, and texture options.`,
+		quote: `Metapan Wall Panels are one of the most elegant ways to add aesthetics and functionality to your living spaces. Our wide product range appeals to every style with sizes.`,
 	},
 
 	// Why Choose Section
@@ -220,6 +221,10 @@ export const enStrings = {
 				phone: "Phone",
 				email: "Email",
 			},
+		},
+		whyChoose: {
+			title: "Why METAPAN | Tedd",
+			description: "Discover why you should choose METAPAN wall panels. Eco-friendly, economical, lightweight, and more.",
 		},
 	},
 	// PDF Modal

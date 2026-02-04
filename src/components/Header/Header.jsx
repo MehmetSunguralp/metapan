@@ -6,10 +6,12 @@ import NavLink from "../NavLink/NavLink";
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
 import styles from "./Header.module.scss";
 import { logo } from "../../staticAssets";
+import trFlag from "../../assets/custom_icons/tr.png";
+import enFlag from "../../assets/custom_icons/en.png";
 
 const Header = () => {
 	const location = useLocation();
-	const { strings } = useLanguage();
+	const { strings, language, changeLanguage } = useLanguage();
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -42,6 +44,7 @@ const Header = () => {
 	const navItems = [
 		{ label: strings.nav.home, href: "/" },
 		{ label: strings.nav.about, href: "/about" },
+		{ label: strings.nav.whyChoose, href: "/why-choose" },
 		{ label: strings.nav.projects, href: "/projects" },
 		{ label: strings.nav.gallery, href: "/gallery" },
 		{ label: strings.nav.pricing, href: "/pricing" },
@@ -84,9 +87,11 @@ const Header = () => {
 						))}
 					</nav>
 
-					<div className={styles.rightSection}>
-						<LanguageSelector />
-					</div>
+					{!isMobileMenuOpen && (
+						<div className={styles.rightSection}>
+							<LanguageSelector />
+						</div>
+					)}
 
 					<button
 						className={styles.hamburger}
@@ -165,7 +170,26 @@ const Header = () => {
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ delay: navItems.length * 0.1, duration: 0.3 }}
 							>
-								<LanguageSelector />
+								<button
+									className={`${styles.mobileLangButton} ${language === "tr" ? styles.active : ""}`}
+									onClick={() => {
+										changeLanguage("tr");
+										toggleMobileMenu();
+									}}
+								>
+									<img src={trFlag} alt="Türkçe" className={styles.mobileLangFlag} />
+									<span>Türkçe</span>
+								</button>
+								<button
+									className={`${styles.mobileLangButton} ${language === "en" ? styles.active : ""}`}
+									onClick={() => {
+										changeLanguage("en");
+										toggleMobileMenu();
+									}}
+								>
+									<img src={enFlag} alt="English" className={styles.mobileLangFlag} />
+									<span>English</span>
+								</button>
 							</motion.div>
 						</motion.div>
 					</>

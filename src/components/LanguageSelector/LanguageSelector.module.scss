@@ -3,6 +3,9 @@
 .languageSelector {
 	position: relative;
 	flex-shrink: 0;
+	@media (max-width: 900px) {
+		margin-bottom: 0.2rem;
+	  }
 }
 
 .selectorButton {

@@ -2,12 +2,13 @@ export const trStrings = {
 	// Navigation
 	nav: {
 		home: "Anasayfa",
-		about: "Hakkında",
-		projects: "Projeler",
+		about: "Hakkımızda",
+		whyChoose: "Neden METAPAN",
+		projects: "Uygulamalar",
 		gallery: "Galeri",
 		pricing: "Fiyat Listesi",
 		certificates: "Dokümanlar",
-		dealers: "Yetkili Bayiler",
+		dealers: "Bayiler",
 		contact: "İletişim",
 	},
 
@@ -16,7 +17,7 @@ export const trStrings = {
 		title: "METAPAN",
 		subtitle: "Yenilikçi Yapı Çözümleri!",
 		description: "İnşaat sektöründe yaşanan uluslararası gelişmeleri Türkiye'ye taşıyor, sektörün geleceğini bugünden kuruyoruz.",
-		cta: "Projelere Göz Atın",
+		cta: "Uygulamalara Göz Atın",
 	},
 
 	// Features Section
@@ -64,7 +65,7 @@ export const trStrings = {
 
 	// Testimonial Section
 	testimonial: {
-		quote: `Duvar panelleri, yaşam alanlarınıza estetik ve işlevsellik kazandırmanın en şık yollarından biridir. Geniş ürün yelpazemiz, farklı renk, desen ve doku seçenekleriyle her tarza hitap eder.`,
+		quote: `Metapan Duvar Panelleri, yaşam alanlarınıza estetik ve işlevsellik kazandırmanın en şık yollarından biridir. Geniş ürün yelpazemiz her tarza hitap eder.`,
 	},
 
 	// Why Choose Section
@@ -146,9 +147,9 @@ export const trStrings = {
 			},
 		},
 		projects: {
-			title: "Projelerimiz | Tedd",
+			title: "Uygulamalar | Tedd",
 			description: "Metapan duvar paneli uygulamaları ve projelerimiz. Çelik konstrüksiyon, betonarme, tiny house ve daha fazlası.",
-			pageTitle: "Projelerimiz",
+			pageTitle: "Uygulamalar",
 			projectTitles: {
 				steel: "Çelik Konstrüksiyon",
 				concrete: "Betonarme",
@@ -220,6 +221,10 @@ export const trStrings = {
 				phone: "Telefon",
 				email: "E-posta",
 			},
+		},
+		whyChoose: {
+			title: "Neden METAPAN | Tedd",
+			description: "METAPAN duvar panellerini neden tercih etmelisiniz? Çevreci, ekonomik, hafif ve daha fazlası.",
 		},
 	},
 	// PDF Modal

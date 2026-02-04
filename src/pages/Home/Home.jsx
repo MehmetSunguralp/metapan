@@ -5,7 +5,6 @@ import FeaturesSection from "../../components/FeaturesSection/FeaturesSection";
 import AboutSection from "../../components/AboutSection/AboutSection";
 import ProjectsPreviewSection from "../../components/ProjectsPreviewSection/ProjectsPreviewSection";
 import TestimonialSection from "../../components/TestimonialSection/TestimonialSection";
-import WhyChooseSection from "../../components/WhyChooseSection/WhyChooseSection";
 
 const Home = () => {
 	const { strings, language } = useLanguage();
@@ -21,10 +20,9 @@ const Home = () => {
 			</Helmet>
 			<Hero />
 			<FeaturesSection />
-			<AboutSection />
-			<ProjectsPreviewSection />
 			<TestimonialSection />
-			<WhyChooseSection />
+			<AboutSection />
+			{/* <ProjectsPreviewSection /> */}
 		</>
 	);
 };

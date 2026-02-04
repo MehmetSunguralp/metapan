@@ -11,7 +11,7 @@ import izolasyonluIcon from "../../assets/features_icons/izolasyonlu.png";
 import nefesAlirIcon from "../../assets/features_icons/nefes_alir.png";
 import kolaySekillendirilebilirIcon from "../../assets/features_icons/kolay_sekillendirilebilir.png";
 
-const WhyChooseSection = () => {
+const WhyChooseSection = ({ hideTitle = false }) => {
 	const { strings } = useLanguage();
 	const [ref, inView] = useInView({
 		threshold: 0.1,
@@ -57,16 +57,18 @@ const WhyChooseSection = () => {
 	};
 
 	return (
-		<section className={styles.whyChooseSection} ref={ref}>
+		<section className={`${styles.whyChooseSection} ${hideTitle ? styles.asPageSection : ""}`} ref={ref}>
 			<div className={styles.container}>
-				<motion.h2
-					className={styles.title}
-					initial={{ opacity: 0, y: -20 }}
-					animate={inView ? { opacity: 1, y: 0 } : {}}
-					transition={{ duration: 0.6 }}
-				>
-					<span className={styles.titleLine}></span> {strings.whyChoose.title}
-				</motion.h2>
+				{!hideTitle && (
+					<motion.h2
+						className={styles.title}
+						initial={{ opacity: 0, y: -20 }}
+						animate={inView ? { opacity: 1, y: 0 } : {}}
+						transition={{ duration: 0.6 }}
+					>
+						<span className={styles.titleLine}></span> {strings.whyChoose.title}
+					</motion.h2>
+				)}
 
 				<motion.div className={styles.grid} variants={containerVariants} initial="hidden" animate={inView ? "visible" : "hidden"}>
 					{features.map((feature) => (
