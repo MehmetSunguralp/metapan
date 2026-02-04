@@ -11,77 +11,82 @@ const Dealers = () => {
 		triggerOnce: true,
 	});
 
-	// Örnek bayiler verisi - kullanıcı daha sonra düzenleyecek
 	const dealers = [
 		{
 			id: 1,
-			city: "İstanbul",
-			company: "METAPAN İstanbul Bayisi",
-			address: "Maslak Mahallesi, Büyükdere Caddesi No:123, Sarıyer/İstanbul",
-			phone: "+90 212 555 0101",
+			city: "ANKARA",
+			company: "VİLLA PREFABRİK ÇELİK YAPI İNŞ. MAK.TİC.SAN.LTD.ŞTİ.",
+			phone: "+90 312 378 7978",
+			phone2: "+90 541 336 3738",
 		},
 		{
 			id: 2,
-			city: "Ankara",
-			company: "Ankara Duvar Panelleri A.Ş.",
-			address: "Çankaya Mahallesi, Atatürk Bulvarı No:456, Çankaya/Ankara",
-			phone: "+90 312 555 0202",
+			city: "ANTALYA",
+			company: "GÜNEŞ ÇELİK YAPI",
+			phone: "+90 532 405 8076",
 		},
 		{
 			id: 3,
-			city: "İzmir",
-			company: "Ege METAPAN Bayisi",
-			address: "Konak Mahallesi, Cumhuriyet Bulvarı No:789, Konak/İzmir",
-			phone: "+90 232 555 0303",
+			city: "BURDUR",
+			company: "EGE STEEL CONSTRUCTION",
+			phone: "+90 532 266 0215",
 		},
 		{
 			id: 4,
-			city: "Bursa",
-			company: "Bursa İnşaat Malzemeleri Ltd.",
-			address: "Osmangazi Mahallesi, Fomara Caddesi No:321, Osmangazi/Bursa",
-			phone: "+90 224 555 0404",
+			city: "BURSA",
+			company: "SOİ MİMARLIK TASARIM SAN.LTD.ŞTİ.",
+			phone: "+90 530 794 1626",
 		},
 		{
 			id: 5,
-			city: "Antalya",
-			company: "Akdeniz METAPAN Bayisi",
-			address: "Muratpaşa Mahallesi, Atatürk Caddesi No:654, Muratpaşa/Antalya",
-			phone: "+90 242 555 0505",
+			city: "ESKİŞEHİR",
+			company: "BONO MUTFAK SERAMİK YAPI MALZ.İNŞ.SAN. VE TİC.A.Ş.",
+			phone: "+90 222 400 0111",
+			phone2: "+90 549 288 1111",
 		},
 		{
 			id: 6,
-			city: "Adana",
-			company: "Çukurova Duvar Panelleri",
-			address: "Seyhan Mahallesi, Ziyapaşa Bulvarı No:987, Seyhan/Adana",
-			phone: "+90 322 555 0606",
+			city: "ESKİŞEHİR",
+			company: "DENGE İZOLASYON SIH. TES. DOĞALGAZ MÜH. İNŞ. SAN. TİC. LTD.ŞTİ.",
+			phone: "+90 222 221 45 17",
+			phone2: "+90 533 281 4517",
 		},
 		{
 			id: 7,
-			city: "Gaziantep",
-			company: "Gazi METAPAN Bayisi",
-			address: "Şahinbey Mahallesi, İnönü Caddesi No:147, Şahinbey/Gaziantep",
-			phone: "+90 342 555 0707",
+			city: "İZMİR",
+			company: "KUTAY ISITMA SOĞUTMA SAN.İTH.İH.TİC.LTD.ŞTİ.",
+			phone: "+90 537 251 8045",
 		},
 		{
 			id: 8,
-			city: "Konya",
-			company: "Konya İnşaat Malzemeleri",
-			address: "Meram Mahallesi, Mevlana Caddesi No:258, Meram/Konya",
-			phone: "+90 332 555 0808",
+			city: "KÜTAHYA",
+			company: "KÜTAHYA KALE PREFABRİK İNŞ. TAAH. OTOM. SAN. TİC. LTD. ŞTİ.",
+			phone: "+90 537 688 2640",
 		},
 		{
 			id: 9,
-			city: "Eskişehir",
-			company: "METAPAN Eskişehir Bayisi",
-			address: "Odunpazarı Mahallesi, 20. Cadde No:8, Odunpazarı/Eskişehir",
-			phone: "+90 222 711 2611",
+			city: "MALATYA",
+			company: "KADİFE İNŞ. TAAH. TİC. VE SAN. LTD. ŞTİ.",
+			phone: "+90 422 212 9650",
+			phone2: "+90 533 350 1241",
 		},
 		{
 			id: 10,
-			city: "Trabzon",
-			company: "Karadeniz METAPAN Bayisi",
-			address: "Ortahisar Mahallesi, Atatürk Alanı No:369, Ortahisar/Trabzon",
-			phone: "+90 462 555 1010",
+			city: "MANİSA",
+			company: "AĞAOĞLU İNŞ. ÇELİK KONS.",
+			phone: "+90 542 845 0205",
+		},
+		{
+			id: 11,
+			city: "SAKARYA",
+			company: "AKDOSTLAR PREFABRİK İNŞ. ÇELİK KONS. METAL SAN.TİC.LTD.ŞTİ.",
+			phone: "+90 532 418 4202",
+		},
+		{
+			id: 12,
+			city: "ZONGULDAK",
+			company: "KERVAN YAPI",
+			phone: "+90 532 513 5467",
 		},
 	];
 
@@ -117,8 +122,8 @@ const Dealers = () => {
 								<tr>
 									<th>{strings.pages.dealers.table.city}</th>
 									<th>{strings.pages.dealers.table.company}</th>
-									<th>{strings.pages.dealers.table.address}</th>
 									<th>{strings.pages.dealers.table.phone}</th>
+									<th>{strings.pages.dealers.table.phone2}</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -126,9 +131,15 @@ const Dealers = () => {
 									<tr key={dealer.id} className={index % 2 === 0 ? styles.evenRow : styles.oddRow}>
 										<td className={styles.cityCell} data-label={`${strings.pages.dealers.table.city}:`}>{dealer.city}</td>
 										<td className={styles.companyCell} data-label={`${strings.pages.dealers.table.company}:`}>{dealer.company}</td>
-										<td className={styles.addressCell} data-label={`${strings.pages.dealers.table.address}:`}>{dealer.address}</td>
 										<td className={styles.phoneCell} data-label={`${strings.pages.dealers.table.phone}:`}>
-											<a href={`tel:${dealer.phone.replace(/\s/g, "")}`}>{dealer.phone}</a>
+											<a href={`tel:${dealer.phone.replaceAll(" ", "")}`}>{dealer.phone}</a>
+										</td>
+										<td className={styles.phone2Cell} data-label={`${strings.pages.dealers.table.phone2}:`}>
+											{dealer.phone2 ? (
+												<a href={`tel:${dealer.phone2.replaceAll(" ", "")}`}>{dealer.phone2}</a>
+											) : (
+												<span className={styles.noPhone}>-</span>
+											)}
 										</td>
 									</tr>
 								))}

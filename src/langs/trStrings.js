@@ -201,14 +201,14 @@ export const trStrings = {
 			},
 		},
 		dealers: {
-			title: "Yetkili Bayiler | METAPAN",
-			description: "METAPAN duvar paneli yetkili bayileri. Şehir bazında bayilerimizin iletişim bilgileri.",
-			pageTitle: "Yetkili Bayiler",
+			title: "Bayiler | METAPAN",
+			description: "METAPAN duvar paneli	 bayileri. Şehir bazında bayilerimizin iletişim bilgileri.",
+			pageTitle: "Bayiler",
 			table: {
-				city: "Şehir",
+				city: "İl",
 				company: "Firma",
-				address: "Adres",
-				phone: "Telefon",
+				phone: "Telefon 1",
+				phone2: "Telefon 2",
 			},
 		},
 		contact: {

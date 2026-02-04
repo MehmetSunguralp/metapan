@@ -207,8 +207,8 @@ export const enStrings = {
 			table: {
 				city: "City",
 				company: "Company",
-				address: "Address",
-				phone: "Phone",
+				phone: "Phone 1",
+				phone2: "Phone 2",
 			},
 		},
 		contact: {
