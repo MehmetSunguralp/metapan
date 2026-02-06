@@ -7,7 +7,7 @@ import styles from "./Dealers.module.scss";
 const Dealers = () => {
 	const { strings, language } = useLanguage();
 	const [ref, inView] = useInView({
-		threshold: 0.1,
+		threshold: 0,
 		triggerOnce: true,
 	});
 
@@ -51,8 +51,8 @@ const Dealers = () => {
 				<meta property="og:type" content="website" />
 				<meta property="og:image" content="https://www.tedd.com.tr/wp-content/uploads/2026/02/logo.png" />
 			</Helmet>
-			<section className={styles.dealersPage} ref={ref}>
-				<div className={styles.container}>
+			<section className={styles.dealersPage}>
+				<div className={styles.container} ref={ref}>
 					<motion.h1
 						className={styles.title}
 						initial={{ opacity: 0, y: -20 }}
