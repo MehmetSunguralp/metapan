@@ -69,3 +69,5 @@ export const video5 = "https://www.tedd.com.tr/wp-content/uploads/2026/02/video5
 export const video6 = "https://www.tedd.com.tr/wp-content/uploads/2026/02/video6.mp4"
 export const video7 = "https://www.tedd.com.tr/wp-content/uploads/2026/02/video7.mp4"
 export const video8 = "https://www.tedd.com.tr/wp-content/uploads/2026/02/video8.mp4"
+export const montaj1 = "http://www.tedd.com.tr/wp-content/uploads/2026/02/montaj1.mp4"
+export const uretim = "http://www.tedd.com.tr/wp-content/uploads/2026/02/uretim.mp4"

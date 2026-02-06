@@ -14,6 +14,8 @@ import {
 	video6,
 	video7,
 	video8,
+	uretim,
+	montaj1
 } from "../../staticAssets";
 import styles from "./Gallery.module.scss";
 
@@ -26,14 +28,16 @@ const Gallery = () => {
 	});
 
 	const videos = [
-		{ id: 1, url: video1, title: "Video 1" },
-		{ id: 2, url: video2, title: "Video 2" },
-		{ id: 3, url: video3, title: "Video 3" },
-		{ id: 4, url: video4, title: "Video 4" },
-		{ id: 5, url: video5, title: "Video 5" },
-		{ id: 6, url: video6, title: "Video 6" },
-		{ id: 7, url: video7, title: "Video 7" },
-		{ id: 8, url: video8, title: "Video 8" },
+		{ id: 1, url: uretim, title: "Uretim" },
+		{ id: 2, url: montaj1, title: "Montaj" },
+		{ id: 3, url: video1, title: "Video 1" },
+		{ id: 4, url: video2, title: "Video 2" },
+		{ id: 5, url: video3, title: "Video 3" },
+		{ id: 6, url: video4, title: "Video 4" },
+		{ id: 7, url: video5, title: "Video 5" },
+		{ id: 8, url: video6, title: "Video 6" },
+		{ id: 9, url: video7, title: "Video 7" },
+		{ id: 10, url: video8, title: "Video 8" },
 	];
 
 	const containerVariants = {
